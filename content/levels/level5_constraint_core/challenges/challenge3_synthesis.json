@@ -1,0 +1,24 @@
+{
+  "id": "5-2",
+  "name": "The Constraint Synthesizer",
+  "type": "constraint_synthesis",
+  "description": "A complex mechanism with multiple interlocking parts stands before you. It seems designed to combine different types of constraints into a cohesive whole.",
+  "promptTask": "Goal: Activate the mechanism by synthesizing constraints.\nLesson: Combining multiple constraint types in prompts.\nCraft a command that effectively combines both negative constraints (what to exclude) and creative constraints (boundaries that shape the output) into a cohesive instruction.",
+  "solveConditions": {
+    "keywords": ["create", "generate", "produce", "synthesize", "form"],
+    "target": ["solution", "pattern", "design", "structure", "output"],
+    "requiredNegativeConstraints": true,
+    "requiredCreativeConstraints": true,
+    "constraintCombination": true
+  },
+  "successMessage": "As you instruct the mechanism to create a solution that excludes conventional approaches and obvious patterns, while working within the constraints of minimalist design principles and a monochromatic color scheme, the interlocking parts align perfectly and reveal a hidden passage forward.",
+  "feedback": {
+    "noNegativeConstraints": "Negative Constraint Error: Your command doesn't specify what should be excluded or avoided. Try adding constraints that clearly state what should not be included.",
+    "noCreativeConstraints": "Creative Constraint Error: Your command doesn't include creative boundaries or limitations that shape the output. Try adding constraints that define parameters for creation.",
+    "noConstraintSynthesis": "Synthesis Error: Your command treats different constraint types separately rather than combining them into a cohesive instruction. Try integrating both negative and creative constraints.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with this mechanism. Try asking it to create or generate something with specific constraints.",
+    "noTarget": "Target Error: What do you want to {action}? Specify what should be created or produced by the mechanism.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The constraint mechanism is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The mechanism requires specific, synthesized constraints to function properly."
+  }
+}

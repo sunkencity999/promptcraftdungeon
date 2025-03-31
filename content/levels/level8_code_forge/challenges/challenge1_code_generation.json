@@ -1,0 +1,25 @@
+{
+  "id": "8-0",
+  "name": "The Function Architect",
+  "type": "code_generation",
+  "description": "The Code Master points to a terminal displaying a blank file. 'Every program begins with a clear specification,' they explain. 'Show me you can craft a prompt that generates clean, functional code.'",
+  "promptTask": "**Craft a Code Generation Prompt**: As a Software Architect (Role), create a function (Task) that validates user input for a registration form (Purpose) with specific validation rules for email, password strength, and username format (Requirements), including proper error handling and documentation (Quality Standards), written in JavaScript (Language).",
+  "solveConditions": {
+    "keywords": ["create", "write", "generate", "develop", "implement"],
+    "target": "function|code|validation|validator",
+    "requiredPersona": ["software architect", "developer", "programmer", "engineer"],
+    "requiredFormat": ["javascript", "js"],
+    "requiredKeywordsContext": ["validation", "email", "password", "username", "error handling", "documentation", "registration"]
+  },
+  "successMessage": "The terminal springs to life, lines of code appearing as if typed by invisible hands...\n\n```javascript\n// Function to validate user registration input\nfunction validateRegistrationInput(email, password, username) {\n  const errors = {};\n  \n  // Email validation\n  const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\n  if (!email || !emailRegex.test(email)) {\n    errors.email = 'Please enter a valid email address';\n  }\n  \n  // Password validation\n  if (!password || password.length < 8) {\n    errors.password = 'Password must be at least 8 characters long';\n  } else if (!/[A-Z]/.test(password) || !/[a-z]/.test(password) || !/[0-9]/.test(password)) {\n    errors.password = 'Password must contain uppercase, lowercase, and numeric characters';\n  }\n  \n  // Username validation\n  const usernameRegex = /^[a-zA-Z0-9_]{3,20}$/;\n  if (!username || !usernameRegex.test(username)) {\n    errors.username = 'Username must be 3-20 characters and contain only letters, numbers, and underscores';\n  }\n  \n  return {\n    isValid: Object.keys(errors).length === 0,\n    errors: errors\n  };\n}\n```\n\n'Excellent,' the Code Master nods. 'You understand that effective code generation prompts must specify not just what the code should do, but also how it should be structured and what quality standards it should meet. Notice how specifying requirements and error handling leads to more robust code?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What should the code do? What language should it use?",
+    "missingPersona": "You need to specify a technical role. Try 'As a Software Architect...'",
+    "missingLanguage": "You haven't specified the programming language. Add 'written in JavaScript'.",
+    "missingRequirements": "Your prompt is missing specific requirements. Include validation rules for email, password, and username.",
+    "missingQuality": "You haven't addressed code quality. Add requirements for 'error handling and documentation'.",
+    "tooSimple": "Your code prompt doesn't request enough functionality. Specify multiple validation requirements."
+  },
+  "xpReward": 100,
+  "nextChallenge": 1
+}

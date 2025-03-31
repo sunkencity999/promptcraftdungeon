@@ -1,0 +1,26 @@
+{
+  "id": "4-0",
+  "name": "The Security Breach",
+  "type": "persona_adoption",
+  "description": "Node pulses erratically... breach data. Archivist: 'This requires context. Access logs from perspective of security analyst focusing on structural weaknesses.'",
+  "promptTask": "Goal: Get focused breach data.\nLesson: Using Persona/Role.\nAdopt the specified **Persona** ('security analyst') in your prompt to query the breach logs specifically for **structural weaknesses**. Frame your request as that role.",
+  "solveConditions": {
+    "keywords": ["access", "retrieve", "get", "show", "find", "report", "analyze"],
+    "target": "logs|breach logs|data|weaknesses|vulnerabilities",
+    "requiredPersona": ["security analyst", "structural expert", "defense auditor"],
+    "requiredKeywordsContext": ["structural", "weakness", "vulnerability"]
+  },
+  "successMessage": "Adopting viewpoint... Node stabilizes: 'Breach Log #4B: Structural failure Sector Delta...'",
+  "feedback": {
+    "vague": "What logs, how?",
+    "wrongAction": "Not data access cmd.",
+    "noTarget": "What data?",
+    "wrongTarget": "Cannot access '{target}'.",
+    "missingPersona": "Perspective Shift Required: Define your **Role** (e.g., 'As a security analyst,...'). Who are you in this query?",
+    "wrongPersona": "Wrong Persona: That role doesn't provide this insight. Try 'security analyst' focus.",
+    "missingContext": "Specify Focus: Need logs related to 'structural weaknesses'.",
+    "tooComplex": "Simplify structure while keeping Role + Focus."
+  },
+  "xpReward": 60,
+  "nextChallenge": 1
+}

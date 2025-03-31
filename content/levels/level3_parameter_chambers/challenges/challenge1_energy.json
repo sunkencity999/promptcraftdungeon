@@ -1,0 +1,27 @@
+{
+  "id": "3-0",
+  "name": "The Energy Console",
+  "type": "parameter_specification",
+  "description": "A console flickers: 'Energy Flow'. Needs manual activation.",
+  "promptTask": "Goal: Activate console.\nLesson: Providing Necessary Parameters (Intensity).\nChannel energy into the console. The Construct mentioned modulation; specify a **strong intensity** parameter in your command.",
+  "solveConditions": {
+    "keywords": ["channel", "activate", "send", "direct", "focus"],
+    "target": "energy|power",
+    "requiredParams": {
+      "intensity": ["strong", "high", "powerful", "intense"]
+    },
+    "negativeKeywords": ["weak", "low", "trickle"]
+  },
+  "successMessage": "Channel STRONG energy! Console flares to life!",
+  "feedback": {
+    "vague": "Specify action, target, and intensity.",
+    "wrongAction": "Doesn't affect flow.",
+    "noTarget": "What to {action}?",
+    "wrongTarget": "Can't {action} '{target}'.",
+    "negativeAction": "Parameter Error: Weak pulse insufficient. Specify *strong* intensity.",
+    "tooComplex": "Focus: Action, Intensity Parameter, Target.",
+    "missingParams": "Parameter Missing: Specify the energy *intensity* (e.g., 'strong')."
+  },
+  "xpReward": 40,
+  "nextChallenge": 1
+}

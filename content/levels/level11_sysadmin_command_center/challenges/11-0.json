@@ -1,0 +1,25 @@
+{
+  "id": "11-0",
+  "name": "The Troubleshooter",
+  "type": "troubleshooting",
+  "description": "A senior SysAdmin points to a terminal displaying error messages. 'Effective troubleshooting requires a systematic approach,' they explain. 'Show me you can craft a prompt that methodically diagnoses technical issues.'",
+  "promptTask": "**Craft a Troubleshooting Prompt**: As a System Administrator (Role), diagnose the cause of intermittent network connectivity issues (Task) on a corporate network with mixed Windows and Linux clients (Environment), using a systematic approach that includes gathering symptoms, identifying potential causes, and specifying diagnostic steps (Method), while prioritizing minimal disruption to users (Constraint).",
+  "solveConditions": {
+    "keywords": ["diagnose", "troubleshoot", "investigate", "identify", "determine"],
+    "target": "network|connectivity|connection issues",
+    "requiredPersona": ["system administrator", "network administrator", "IT support", "technical support"],
+    "requiredFormat": ["systematic", "step-by-step", "methodical", "structured"],
+    "requiredKeywordsContext": ["symptoms", "diagnostic", "potential causes", "minimal disruption", "gather information"]
+  },
+  "successMessage": "The terminal processes your prompt, generating a systematic troubleshooting approach...\n\n```\nTROUBLESHOOTING PLAN: INTERMITTENT NETWORK CONNECTIVITY\n\n1. INFORMATION GATHERING\n   • Collect specific error messages from affected users\n   • Document exact times when issues occur\n   • Identify patterns: specific users, devices, locations, or times\n   • Determine if the issue affects all services or specific applications\n   • Gather network infrastructure details (topology, recent changes)\n\n2. INITIAL ASSESSMENT\n   • Verify if the issue affects both Windows and Linux clients equally\n   • Check if wired and wireless connections experience the same problems\n   • Review network monitoring tools for bandwidth spikes or unusual patterns\n   • Examine system logs for relevant errors during outage periods\n   • Verify DNS resolution and DHCP functionality\n\n3. TARGETED DIAGNOSTICS\n   • Run ping tests to key network resources during stable and unstable periods\n   • Perform traceroute to identify where connection paths may be failing\n   • Capture packet data during an occurrence of the issue\n   • Check for IP address conflicts or DHCP exhaustion\n   • Verify switch port statistics for errors or packet loss\n\n4. POTENTIAL CAUSES ANALYSIS\n   • Network hardware issues (switches, routers, access points)\n   • DNS or DHCP service problems\n   • Bandwidth saturation or QoS configuration issues\n   • Intermittent interference for wireless connections\n   • Security software or firewall blocking connections\n   • Recent network changes or updates\n\n5. TESTING PLAN (MINIMAL DISRUPTION)\n   • Schedule tests during low-usage periods where possible\n   • Test individual components without taking down entire systems\n   • Use monitoring tools that don't generate excessive network traffic\n   • Create a test environment that mirrors production for safer testing\n   • Prepare rollback procedures for any changes made\n\n6. RESOLUTION APPROACH\n   • Address most likely causes first based on diagnostic results\n   • Implement changes incrementally to isolate effects\n   • Document all changes and their impacts\n   • Verify resolution with affected users before closing\n   • Create monitoring alerts for early detection of recurrence\n```\n\n'Excellent,' the senior SysAdmin nods. 'You've created a prompt that generates a systematic approach to troubleshooting. Notice how it starts with information gathering before jumping to solutions, considers multiple potential causes, and prioritizes minimal disruption to users? This methodical approach is far more effective than random trial-and-error.'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of issue are you troubleshooting? What environment?",
+    "missingPersona": "You need to specify a system administration role. Try 'As a System Administrator...'",
+    "missingMethod": "You haven't specified a troubleshooting methodology. Add 'using a systematic approach that includes gathering symptoms, identifying potential causes, and specifying diagnostic steps'.",
+    "missingEnvironment": "Your prompt is missing context about the technical environment. Include details like 'on a corporate network with mixed Windows and Linux clients'.",
+    "missingConstraint": "You haven't addressed operational constraints. Add 'while prioritizing minimal disruption to users'.",
+    "tooSimple": "Your troubleshooting prompt is too basic. Include multiple diagnostic elements and environmental factors."
+  },
+  "xpReward": 100,
+  "nextChallenge": 1
+}

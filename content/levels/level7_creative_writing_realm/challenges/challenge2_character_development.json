@@ -1,0 +1,28 @@
+{
+  "id": "7-1",
+  "name": "The Character Sculptor",
+  "type": "character_development",
+  "description": "The Librarian hands you a feather quill that seems to glow with potential. 'A story is only as compelling as its characters,' they explain. 'Show me you can craft a prompt that brings a character to life.'",
+  "promptTask": "**Design a Character Prompt**: As a Character Architect (Role), create a detailed character profile (Task) of a complex protagonist (Subject) with conflicting motivations and a specific backstory (Elements), formatted as a structured profile with personality traits, history, and goals (Format), ensuring the character avoids stereotypical traits (Constraint).",
+  "solveConditions": {
+    "keywords": ["create", "design", "develop", "craft", "generate"],
+    "target": "character|protagonist|person|profile",
+    "requiredPersona": ["character architect", "character designer", "character developer"],
+    "requiredFormat": ["profile", "structured", "sections", "traits", "history", "goals"],
+    "requiredKeywordsContext": ["complex", "conflicting motivations", "backstory", "personality", "history", "goals"],
+    "negativeConstraint": {
+      "exclude": ["stereotype", "stereotypical", "cliché", "cliche", "one-dimensional"]
+    }
+  },
+  "successMessage": "The quill dances across the parchment, sketching not in lines but in words. A character emerges from the page—complex, layered, with a rich history and conflicting desires.\n\n'Excellent,' the Librarian nods. 'You understand that effective character prompts must balance specificity with room for creative interpretation. Notice how structuring the profile helps organize the AI's thinking about the character?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of character? What elements should be included?",
+    "missingPersona": "You need to specify a creative role. Try 'As a Character Architect...'",
+    "missingFormat": "You haven't specified how the character should be presented. Add 'formatted as a structured profile with traits, history, and goals'.",
+    "missingElements": "Your prompt is missing key character elements. Include 'with conflicting motivations and a specific backstory'.",
+    "missingConstraint": "You haven't addressed potential stereotyping. Add 'avoiding stereotypical traits'.",
+    "tooSimple": "Your character prompt doesn't request enough complexity. Specify 'complex protagonist with conflicting motivations'."
+  },
+  "xpReward": 100,
+  "nextChallenge": 2
+}

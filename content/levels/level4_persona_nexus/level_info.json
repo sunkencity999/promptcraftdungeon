@@ -1,0 +1,21 @@
+{
+  "id": 4,
+  "name": "The Persona Nexus",
+  "shortDescription": "Master persona-based prompting and output format specification",
+  "challenges": [
+    "challenge1_persona",
+    "challenge2_format",
+    "challenge3_constraint"
+  ],
+  "learningObjectives": [
+    "Understand how adopting specific personas shapes AI responses",
+    "Learn to specify output formats for structured results",
+    "Master using negative constraints to exclude unwanted content",
+    "Recognize how perspective influences information retrieval"
+  ],
+  "skills": ["persona_adoption", "format_specification", "negative_constraints"],
+  "prerequisites": ["level3_parameter_chambers"],
+  "nextLevel": "level5_constraint_core",
+  "estimatedCompletionTime": "30-35 minutes",
+  "difficultyLevel": "intermediate"
+}

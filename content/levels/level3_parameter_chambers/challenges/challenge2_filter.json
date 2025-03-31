@@ -1,0 +1,22 @@
+{
+  "id": "3-1",
+  "name": "The Filtering Prism",
+  "type": "parameter_filtering",
+  "description": "A crystalline prism stands on a pedestal, surrounded by swirling colored lights. It seems designed to focus and filter these lights in specific ways.",
+  "promptTask": "Goal: Focus the prism to create a specific light pattern.\nLesson: Using parameters to filter and refine outputs.\nCraft a command that uses specific filtering parameters to focus only on certain colors or patterns.",
+  "solveConditions": {
+    "keywords": ["focus", "filter", "direct", "channel", "refine"],
+    "target": ["prism", "light", "beam", "pattern", "colors"],
+    "requiredParameters": ["only", "except", "without", "excluding", "just", "specifically"],
+    "filterTerms": ["red", "blue", "green", "yellow", "purple", "orange", "pattern"]
+  },
+  "successMessage": "As you direct the prism to focus only on the blue and green light patterns while excluding the red frequencies, the crystal aligns perfectly, projecting a mesmerizing aquatic pattern on the far wall that reveals a hidden doorway.",
+  "feedback": {
+    "noParameters": "Parameter Error: Your command needs filtering parameters. Try using terms like 'only,' 'except,' or 'without' to specify what to include or exclude.",
+    "incompleteParameters": "Filtering Required: Your command needs to be more specific about which colors or patterns to focus on or filter out.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with the prism. Try focusing or filtering the light.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're interacting with the prism or light patterns.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The prism and light patterns are the focal points of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The prism requires specific filtering instructions to function properly."
+  }
+}

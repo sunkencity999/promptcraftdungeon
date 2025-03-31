@@ -1,0 +1,19 @@
+{
+  "levels": [
+    "level1_hall_of_first_words",
+    "level2_echoing_caverns",
+    "level3_parameter_chambers",
+    "level4_persona_nexus",
+    "level5_constraint_core",
+    "level6_framework_observatory",
+    "level7_creative_writing_realm",
+    "level8_code_forge",
+    "level9_data_analysis_nexus",
+    "level10_hr_management_suite",
+    "level11_sysadmin_command_center",
+    "level12_research_laboratory",
+    "level13_master_prompting_citadel"
+  ],
+  "version": "1.1.0",
+  "lastUpdated": "2025-03-28"
+}

@@ -1,0 +1,22 @@
+{
+  "id": 7,
+  "name": "Creative Writing Realm",
+  "shortDescription": "Master prompts for storytelling, character development, and creative content generation",
+  "challenges": [
+    "challenge1_storytelling",
+    "challenge2_character_development",
+    "challenge3_worldbuilding"
+  ],
+  "learningObjectives": [
+    "Craft prompts that generate compelling narratives with clear plot structures",
+    "Create detailed character prompts that produce consistent personalities",
+    "Design prompts for rich, coherent fictional worlds and settings",
+    "Learn techniques for maintaining narrative consistency across multiple prompts",
+    "Master prompting for different literary styles, tones, and genres"
+  ],
+  "skills": ["storytelling", "character_development", "worldbuilding", "style_control", "narrative_consistency"],
+  "prerequisites": ["level6_framework_observatory"],
+  "nextLevel": 8,
+  "estimatedCompletionTime": "45-50 minutes",
+  "difficultyLevel": "industry-specific"
+}

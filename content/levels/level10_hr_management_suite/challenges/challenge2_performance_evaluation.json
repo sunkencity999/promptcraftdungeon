@@ -1,0 +1,25 @@
+{
+  "id": "10-1",
+  "name": "The Growth Facilitator",
+  "type": "performance_evaluation",
+  "description": "The HR Director points to a terminal displaying an employee performance review template. 'Effective feedback drives growth,' they explain. 'Show me you can craft a prompt that creates constructive performance evaluations.'",
+  "promptTask": "**Craft a Performance Evaluation Prompt**: As an HR Manager (Role), create a performance review (Task) for a mid-level employee (Subject) that includes achievements, areas for improvement, and development goals (Elements), structured with balanced feedback and specific examples (Format), avoiding subjective bias and focusing on observable behaviors (Constraints).",
+  "solveConditions": {
+    "keywords": ["create", "write", "generate", "develop", "craft"],
+    "target": "performance review|evaluation|assessment|feedback",
+    "requiredPersona": ["hr manager", "performance specialist", "talent development", "manager"],
+    "requiredFormat": ["balanced", "specific examples", "structured", "constructive"],
+    "requiredKeywordsContext": ["achievements", "improvement", "development", "goals", "observable", "behaviors", "specific"]
+  },
+  "successMessage": "The terminal processes your prompt, crafting a balanced performance evaluation...\n\n```\nPERFORMANCE EVALUATION\n\nAchievements:\n• Successfully completed the database migration project two weeks ahead of schedule, resulting in 15% improved system performance\n• Collaborated effectively with the marketing team to implement new reporting features, receiving positive feedback from stakeholders\n• Demonstrated initiative by creating documentation that reduced onboarding time for new team members\n\nAreas for Development:\n• Meeting facilitation: When leading project meetings, could improve in keeping discussions focused on agenda items and ensuring all voices are heard\n• Technical documentation: Work products would benefit from more comprehensive documentation to support maintenance and knowledge transfer\n• Time management: Occasionally underestimates time required for complex tasks, which has impacted sprint planning\n\nDevelopment Goals:\n• Attend the Advanced Project Management workshop to strengthen meeting facilitation and planning skills\n• Implement a documentation template for all new features to ensure consistency\n• Work with mentor to develop more accurate time estimation techniques for complex tasks\n\nOverall Assessment:\n• Demonstrates strong technical skills and collaborative approach\n• Shows potential for growth with focused development in project management areas\n• Valuable team member who consistently contributes to positive outcomes\n```\n\n'Excellent,' the HR Director nods. 'You understand that effective performance evaluation prompts must balance recognition with development opportunities. Notice how focusing on observable behaviors with specific examples creates more actionable feedback?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of evaluation? What elements should be included?",
+    "missingPersona": "You need to specify an HR role. Try 'As an HR Manager...'",
+    "missingFormat": "You haven't specified how the evaluation should be structured. Add 'with balanced feedback and specific examples'.",
+    "missingElements": "Your prompt is missing key evaluation elements. Include 'achievements, areas for improvement, and development goals'.",
+    "missingConstraints": "You haven't addressed potential biases. Add constraints for 'avoiding subjective bias and focusing on observable behaviors'.",
+    "tooSimple": "Your evaluation prompt doesn't request enough elements. Specify multiple evaluation components."
+  },
+  "xpReward": 100,
+  "nextChallenge": 2
+}

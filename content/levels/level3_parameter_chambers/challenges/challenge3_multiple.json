@@ -1,0 +1,22 @@
+{
+  "id": "3-2",
+  "name": "The Parameter Matrix",
+  "type": "multiple_parameters",
+  "description": "A complex matrix of glowing symbols covers the wall. Each symbol seems to represent a different parameter that can be adjusted and combined with others.",
+  "promptTask": "Goal: Activate the matrix with the right parameter combination.\nLesson: Using multiple parameters together in prompts.\nCraft a command that combines at least three different types of parameters (format, style, constraints, quantity, etc.) to configure the matrix.",
+  "solveConditions": {
+    "keywords": ["activate", "configure", "set", "adjust", "calibrate"],
+    "target": ["matrix", "parameters", "symbols", "configuration", "system"],
+    "requiredParameterCount": 3,
+    "parameterTypes": ["format", "style", "quantity", "time", "constraint", "order", "tone", "audience"]
+  },
+  "successMessage": "As you configure the matrix with multiple parameters - setting the format to hierarchical, limiting the quantity to five elements, and specifying a technical style - the symbols align perfectly and the wall slides open to reveal the path forward.",
+  "feedback": {
+    "insufficientParameters": "Parameter Count Error: Your command needs to include at least three different types of parameters. Try adding more specific configuration instructions.",
+    "sameParameterType": "Parameter Variety Error: You're using multiple instances of the same parameter type. Try incorporating different types like format, style, quantity, constraints, etc.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with the matrix. Try configuring or setting parameters.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're interacting with the matrix or parameter system.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The parameter matrix is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The matrix requires specific parameter configurations to activate."
+  }
+}

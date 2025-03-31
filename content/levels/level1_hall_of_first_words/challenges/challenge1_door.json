@@ -1,0 +1,37 @@
+{
+  "id": "1-0",
+  "name": "The Stuck Door",
+  "type": "basic_command",
+  "description": "Before you stands a sturdy wooden door. Heavy hinges are coated in rust. It seems slightly ajar, perhaps stuck on the uneven stone floor.",
+  "promptTask": "Goal: Open the door.\nLesson: Basic Command Structure.\nCraft a **clear command** using a simple **[Action]** verb and the specific **[Target]** object.",
+  "solveConditions": {
+    "keywords": ["push", "open"],
+    "target": "door",
+    "complexityLimit": 3,
+    "negativeKeywords": ["pull", "kick", "destroy", "break", "bash"]
+  },
+  "successMessage": "Following your precise command, you push the door. With a groan of protesting wood and scraping stone, it swings open, revealing the path forward.",
+  "feedback": {
+    "vague": "Clarity Error: Command unclear. Specify both an [Action] and a [Target].",
+    "wrongAction": "Syntax Error: '{action}' is not the effective [Action] here. How might you simply open it?",
+    "noTarget": "Clarity Error: Specify the [Target] of your action. What do you want to {action}? (e.g., '{action} door').",
+    "wrongTarget": "Target Error: There is no '{target}' here. Focus your command on the 'door'.",
+    "tooComplex": "Simplicity Required: Command too complex for this hall. Use the basic [Action] [Object] structure (e.g., 'push door').",
+    "negativeAction": "Ineffective Action: Brute force ('{action}') won't work. A simpler action is needed."
+  },
+  "hints": [
+    "Think about the simplest way to make the door move. What action would you take?",
+    "The door is slightly ajar. Would you pull or push a door that's already partially open?",
+    "Try the command 'push door' or 'open door'."
+  ],
+  "relatedTheory": "clarity_basics",
+  "relatedExamples": ["action_target_examples"],
+  "xpReward": 10,
+  "nextChallenge": "challenge2_lever",
+  "teachingPoints": [
+    "Basic [Action] [Target] structure",
+    "Choosing appropriate verbs",
+    "Avoiding unnecessary complexity",
+    "Context-appropriate actions"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": 9,
+  "name": "Data Analysis Nexus",
+  "shortDescription": "Master prompts for data analysis, visualization, and insights extraction",
+  "challenges": [
+    "challenge1_data_exploration",
+    "challenge2_visualization",
+    "challenge3_insights_extraction"
+  ],
+  "learningObjectives": [
+    "Craft prompts that generate comprehensive data exploration analyses",
+    "Design prompts for effective data visualization with appropriate chart types",
+    "Create prompts that extract meaningful insights and patterns from complex datasets",
+    "Learn techniques for specifying statistical methods and analysis approaches",
+    "Master prompting for different data types and analysis scenarios"
+  ],
+  "skills": ["data_exploration", "visualization", "insights_extraction", "statistical_analysis", "pattern_recognition"],
+  "prerequisites": ["level8_code_forge"],
+  "nextLevel": 10,
+  "estimatedCompletionTime": "45-50 minutes",
+  "difficultyLevel": "industry-specific"
+}

@@ -1,0 +1,25 @@
+{
+  "id": "9-2",
+  "name": "The Insight Extractor",
+  "type": "insights_extraction",
+  "description": "The Data Sage gestures to a complex web of visualizations and statistics. 'Analysis and visualization are merely tools,' they explain. 'The true goal is extracting meaningful insights that drive decisions. Show me you can craft a prompt that transforms data into actionable knowledge.'",
+  "promptTask": "**Craft an Insights Extraction Prompt**: As a Business Intelligence Analyst (Role), extract key insights and actionable recommendations (Task) from a marketing campaign performance dataset (Subject) using pattern recognition, anomaly detection, and trend analysis (Methods), organizing findings by business impact and implementation feasibility (Format), with specific recommendations for each audience segment (Requirements).",
+  "solveConditions": {
+    "keywords": ["extract", "identify", "discover", "uncover", "derive"],
+    "target": "insights|patterns|findings|recommendations|conclusions",
+    "requiredPersona": ["business intelligence analyst", "data scientist", "insights specialist", "analyst"],
+    "requiredFormat": ["organized", "prioritized", "structured", "categorized"],
+    "requiredKeywordsContext": ["actionable", "business impact", "recommendations", "decision", "strategy", "patterns", "trends"]
+  },
+  "successMessage": "The terminal processes your prompt, analyzing patterns and relationships in the data...\n\nA comprehensive insights report emerges, highlighting key findings organized by business impact. Each insight is paired with specific, actionable recommendations tailored to different audience segments, with clear implementation guidance.\n\n'Excellent,' the Data Sage nods. 'You understand that effective insight extraction prompts must bridge analysis and action. Notice how organizing by business impact and implementation feasibility transforms interesting findings into strategic priorities?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of insights? How should they be organized and presented?",
+    "missingPersona": "You need to specify an analytical role. Try 'As a Business Intelligence Analyst...'",
+    "missingMethods": "Your prompt is missing specific analytical methods. Include 'pattern recognition, anomaly detection, and trend analysis'.",
+    "missingFormat": "You haven't specified how insights should be organized. Add 'organizing findings by business impact and implementation feasibility'.",
+    "missingRequirements": "You haven't addressed how recommendations should be tailored. Add requirements for 'specific recommendations for each audience segment'.",
+    "tooSimple": "Your insights extraction prompt doesn't request enough analytical depth. Specify multiple analytical methods and organization requirements."
+  },
+  "xpReward": 100,
+  "nextChallenge": null
+}

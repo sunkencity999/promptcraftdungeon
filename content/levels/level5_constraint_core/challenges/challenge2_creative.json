@@ -1,0 +1,22 @@
+{
+  "id": "5-1",
+  "name": "The Creative Boundary",
+  "type": "creative_constraints",
+  "description": "A shimmering field of energy pulses before you, filled with swirling patterns that seem to respond to creative limitations and boundaries.",
+  "promptTask": "Goal: Shape the energy field with creative constraints.\nLesson: Using creative constraints in prompts.\nCraft a command that sets specific creative boundaries or limitations that will shape how the energy field manifests.",
+  "solveConditions": {
+    "keywords": ["create", "shape", "form", "generate", "manifest"],
+    "target": ["pattern", "design", "structure", "formation", "field"],
+    "requiredConstraints": true,
+    "creativeConstraintTypes": ["style", "elements", "rules", "limitations", "parameters", "boundaries"]
+  },
+  "successMessage": "As you instruct the energy field to create a pattern using only geometric shapes, limited to a blue and gold color palette, and following the rule of symmetry across both axes, the swirling energy coalesces into a beautiful mandala-like formation that reveals a hidden pathway.",
+  "feedback": {
+    "noConstraints": "Constraint Error: Your command doesn't specify creative constraints. Try setting specific limitations or boundaries for the creation.",
+    "vagueConstraints": "Constraint Detail Error: Your constraints are too vague. Try more specific creative limitations such as style, elements, rules, or parameters.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with the energy field. Try asking it to create or form something with specific constraints.",
+    "noTarget": "Target Error: What do you want to {action}? Specify what should be created or shaped in the energy field.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The energy field is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The energy field requires specific creative constraints to function properly."
+  }
+}

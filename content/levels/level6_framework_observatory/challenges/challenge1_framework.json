@@ -1,0 +1,28 @@
+{
+  "id": "6-0",
+  "name": "The Security Report",
+  "type": "structured_framework",
+  "description": "Scrivener points to chaotic projection: schematics, energy fluctuations, breach data.",
+  "promptTask": "**Synthesize & Structure**: As Overseer (Role), generate security report (Task) identifying top 3 vulnerable sectors (Context: energy & history), as numbered list (Format), excluding 'offline' (Constraint). Demonstrate structured intent.",
+  "solveConditions": {
+    "keywords": ["generate", "create", "report", "analyze", "identify"],
+    "target": "report|vulnerability|sectors",
+    "requiredPersona": ["dungeon overseer", "overseer"],
+    "requiredFormat": ["numbered list", "ordered list"],
+    "negativeConstraint": {
+      "exclude": ["offline"]
+    },
+    "requiredKeywordsContext": ["vulnerable", "breach risk", "high energy", "fluctuations", "past breach", "history", "top 3", "most"]
+  },
+  "successMessage": "Generating report...\n1. Delta...\n2. Zeta...\n3. Beta...",
+  "feedback": {
+    "vague": "...",
+    "missingPersona": "Framework Fail: Missing Role. Define 'As Dungeon Overseer...'.",
+    "missingFormat": "Framework Fail: Missing Format. Specify 'as numbered list'.",
+    "missingExclusion": "Framework Fail: Missing Constraint. Add 'exclude offline'.",
+    "missingCriteria": "Framework Fail: Missing Context/Criteria. Specify 'based on energy and history', 'top 3'.",
+    "tooComplex": "Structure unclear. Follow Role->Task->Criteria->Format->Constraints."
+  },
+  "xpReward": 100,
+  "nextChallenge": 1
+}

@@ -1,0 +1,21 @@
+{
+  "id": 6,
+  "name": "The Framework Observatory",
+  "shortDescription": "Master structured frameworks, critical evaluation, and multi-stage prompting",
+  "challenges": [
+    "challenge1_framework",
+    "challenge2_rtf",
+    "challenge3_multistage"
+  ],
+  "learningObjectives": [
+    "Understand how to use structured frameworks like ROLE-TASK-FORMAT",
+    "Learn to critically evaluate AI outputs and refine prompts accordingly",
+    "Master multi-stage prompting for complex tasks",
+    "Recognize how intent and purpose shape effective prompt design"
+  ],
+  "skills": ["structured_frameworks", "output_evaluation", "multi_stage_prompting"],
+  "prerequisites": ["level5_constraint_core"],
+  "nextLevel": null,
+  "estimatedCompletionTime": "40-45 minutes",
+  "difficultyLevel": "expert"
+}

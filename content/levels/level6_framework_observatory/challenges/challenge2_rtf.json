@@ -1,0 +1,26 @@
+{
+  "id": "6-1",
+  "name": "The RTF Calibrator",
+  "type": "rtf_framework",
+  "description": "A complex device with three interconnected dials labeled 'Role,' 'Task,' and 'Format' stands in the center of the room. It seems designed to respond to structured instructions.",
+  "promptTask": "Goal: Calibrate the device using the RTF framework.\nLesson: Using the Role-Task-Format framework in prompts.\nCraft a command that clearly specifies a role (who should perform), a task (what to do), and a format (how to present the result).",
+  "solveConditions": {
+    "keywords": ["calibrate", "configure", "set", "adjust", "align"],
+    "target": ["device", "dials", "calibrator", "mechanism", "rtf"],
+    "requiredRTF": true,
+    "roleIndicators": ["as a", "as an", "in the role of", "acting as", "taking the perspective of"],
+    "taskIndicators": ["analyze", "create", "develop", "explain", "summarize", "evaluate"],
+    "formatIndicators": ["in the form of", "formatted as", "presented as", "structured as", "organized as"]
+  },
+  "successMessage": "As you calibrate the device by setting the Role dial to 'as a data scientist,' the Task dial to 'analyze the patterns in the chamber,' and the Format dial to 'presented as a concise report with key findings,' the mechanism hums to life and reveals a hidden passage forward.",
+  "feedback": {
+    "noRole": "Role Error: Your command doesn't specify a role. Try including who should perform the task using phrases like 'as a [role]' or 'in the role of [role]'.",
+    "noTask": "Task Error: Your command doesn't clearly specify a task. Try including what should be done using action verbs like 'analyze,' 'create,' or 'explain.'",
+    "noFormat": "Format Error: Your command doesn't specify a format. Try including how the result should be presented using phrases like 'in the form of [format]' or 'formatted as [format]'.",
+    "incompleteRTF": "Framework Error: Your command is missing one or more elements of the Role-Task-Format framework. Ensure you include all three components.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with this device. Try calibrating or configuring it using the RTF framework.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're interacting with the device or RTF calibrator.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The RTF calibration device is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The device requires specific RTF framework instructions to function properly."
+  }
+}

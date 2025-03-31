@@ -1,0 +1,23 @@
+{
+  "id": "6-2",
+  "name": "The Sequential Processor",
+  "type": "multistage_prompting",
+  "description": "A complex machine with multiple processing stages stands before you. It seems designed to handle instructions that break down complex tasks into sequential steps.",
+  "promptTask": "Goal: Program the processor with a multi-stage approach.\nLesson: Using multi-stage prompting for complex tasks.\nCraft a command that breaks down a complex task into a clear sequence of steps, with each step building on the previous one.",
+  "solveConditions": {
+    "keywords": ["program", "process", "execute", "perform", "run"],
+    "target": ["processor", "sequence", "steps", "stages", "task"],
+    "requiredStages": 3,
+    "stageIndicators": ["first", "then", "next", "after", "finally", "lastly", "step 1", "step 2", "step 3"]
+  },
+  "successMessage": "As you program the processor with a multi-stage approach - first analyzing the chamber's symbols, then identifying patterns among them, and finally synthesizing the findings into a cohesive interpretation - the machine processes each step sequentially and reveals the hidden path forward.",
+  "feedback": {
+    "insufficientStages": "Stage Count Error: Your command doesn't break down the task into enough stages. Try specifying at least three sequential steps.",
+    "noSequentialStructure": "Sequence Error: Your command doesn't clearly indicate the sequence of steps. Try using words like 'first,' 'then,' 'finally,' or numbered steps.",
+    "nonBuildingStages": "Stage Relationship Error: Your stages don't build upon each other in a logical progression. Each step should use or build on the output of the previous step.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with this processor. Try programming or instructing it with a multi-stage approach.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're interacting with the processor or providing a sequence of steps.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The sequential processor is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The processor requires a specific multi-stage approach to function properly."
+  }
+}

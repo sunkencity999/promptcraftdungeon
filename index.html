@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PromptCraft Dungeon</title>
+    <!-- Favicon references with new files -->
+    <link rel="icon" type="image/x-icon" href="favicon_new.ico">
+    <link rel="icon" type="image/png" href="favicon_new.png">
+    <link rel="icon" type="image/svg+xml" href="favicon_new.svg">
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to UX components styles -->
+    <link rel="stylesheet" href="styles/ux_components.css">
+    <!-- Link to a fun retro font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Add Markdown parser for educational content -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <!-- Landing Page Section -->
+    <div id="landing-page">
+        <h1>PromptCraft Dungeon</h1>
+        <p>Hone your skills. Master the prompt. Conquer the depths.</p>
+        <p>In this dungeon, your words shape reality. Only the most skillful prompt engineers will survive.</p>
+        <button id="start-button">Begin Your Journey</button>
+    </div>
+
+    <!-- Game Interface Section (Initially Hidden) -->
+    <div id="game-wrapper" style="display: none;">
+        <!-- Level Image Container (Hidden on Mobile) -->
+        <div id="level-image-container">
+            <img id="level-image" src="" alt="Level visualization">
+        </div>
+        
+        <!-- Game Container -->
+        <div id="game-container">
+            <div id="game-output">
+                <!-- Game text will appear here -->
+            </div>
+            <div id="input-area">
+                <span class="prompt-indicator">&gt;</span>
+                <input type="text" id="prompt-input" placeholder="Enter your command (or 'help')...">
+                <!-- No submit button needed, we'll use Enter key -->
+            </div>
+            <div id="status-bar" class="game-ui">
+                <span>Level: <span id="player-level-value">1</span></span> |
+                <span>XP: <span id="player-xp">0</span>/<span id="xp-next">50</span></span> |
+                <span>Location: <span id="player-location">Unknown</span></span> |
+                <span><button id="theory-button" class="small-button">📚 Theory</button></span>
+                <span><button id="examples-button" class="small-button">🔍 Examples</button></span>
+                <span><button id="prompt-help-button" class="small-button">💡 Prompt Help</button></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Educational Content Modal -->
+    <div id="educational-modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-tabs">
+                <button class="tab-button active" data-tab="theory">Theory</button>
+                <button class="tab-button" data-tab="examples">Examples</button>
+                <button id="practice-button" class="tab-button" data-tab="practice">Practice</button>
+            </div>
+            <div id="modal-content-container">
+                <!-- Content will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Markdown parser (can often be loaded normally or deferred) -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+    <!-- Load custom scripts sequentially after DOM parsing -->
+    <script src="content_loader.js" defer></script>
+    <script src="educational_content.js" defer></script>
+    <script src="prompt_visualizer.js" defer></script> <!-- Assuming this might also have dependencies -->
+    <script src="script.js" defer></script> <!-- Main script depends on others -->
+</body>
+</html>

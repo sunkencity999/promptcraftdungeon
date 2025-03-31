@@ -1,0 +1,21 @@
+{
+  "id": 5,
+  "name": "The Constraint Core",
+  "shortDescription": "Master advanced constraint techniques and synthesize multiple prompt engineering methods",
+  "challenges": [
+    "challenge1_negative",
+    "challenge2_creative",
+    "challenge3_synthesis"
+  ],
+  "learningObjectives": [
+    "Understand how to effectively use negative constraints to shape responses",
+    "Learn to apply creative constraints for innovative outputs",
+    "Master synthesizing multiple prompt techniques into cohesive instructions",
+    "Recognize how constraints can enhance rather than limit AI creativity"
+  ],
+  "skills": ["negative_constraints", "creative_constraints", "technique_synthesis"],
+  "prerequisites": ["level4_persona_nexus"],
+  "nextLevel": "level6_framework_observatory",
+  "estimatedCompletionTime": "35-40 minutes",
+  "difficultyLevel": "advanced"
+}

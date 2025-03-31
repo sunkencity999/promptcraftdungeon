@@ -1,0 +1,20 @@
+{
+  "id": 1,
+  "name": "The Hall of First Words",
+  "shortDescription": "Learn the fundamentals of clear prompt structure with basic action-target commands",
+  "challenges": [
+    "challenge1_door",
+    "challenge2_lever"
+  ],
+  "learningObjectives": [
+    "Understand the importance of clarity in prompts",
+    "Master basic command structure: [Action] [Target]",
+    "Recognize how ambiguity leads to misinterpretation",
+    "Learn to choose precise verbs for specific actions"
+  ],
+  "skills": ["clarity", "basic_structure", "verb_selection"],
+  "prerequisites": [],
+  "nextLevel": "level2_echoing_caverns",
+  "estimatedCompletionTime": "15-20 minutes",
+  "difficultyLevel": "beginner"
+}

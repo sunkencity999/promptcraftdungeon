@@ -1,0 +1,28 @@
+{
+  "id": "11",
+  "name": "SysAdmin Command Center",
+  "description": "Master the art of crafting prompts for system administration tasks, from troubleshooting to automation and documentation.",
+  "introduction": "Welcome to the SysAdmin Command Center, where efficiency and precision are paramount. Here, you'll learn to craft prompts that help manage complex systems, automate routine tasks, and solve technical problems with clarity.",
+  "challenges": [
+    {
+      "id": "11-0",
+      "name": "The Troubleshooter",
+      "type": "troubleshooting",
+      "description": "Learn to craft prompts that diagnose and resolve system issues effectively."
+    },
+    {
+      "id": "11-1",
+      "name": "The Automation Engineer",
+      "type": "automation",
+      "description": "Master prompts that generate scripts and automation solutions for routine tasks."
+    },
+    {
+      "id": "11-2",
+      "name": "The Documentation Specialist",
+      "type": "documentation",
+      "description": "Create prompts that produce clear, comprehensive technical documentation."
+    }
+  ],
+  "completion_message": "Congratulations on mastering the SysAdmin Command Center! You've learned to craft prompts that troubleshoot complex issues, automate routine tasks, and create clear documentation. These skills will serve you well in managing technical systems and supporting users effectively.",
+  "next_level": "12"
+}

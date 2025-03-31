@@ -1,0 +1,28 @@
+{
+  "id": "12",
+  "name": "Research Laboratory",
+  "description": "Master the art of crafting prompts for academic and scientific research, from literature reviews to experimental design and data analysis.",
+  "introduction": "Welcome to the Research Laboratory, where precision and methodology are paramount. Here, you'll learn to craft prompts that help explore scientific literature, design experiments, analyze data, and communicate findings effectively.",
+  "challenges": [
+    {
+      "id": "12-0",
+      "name": "The Literature Explorer",
+      "type": "literature_review",
+      "description": "Learn to craft prompts that effectively search and synthesize academic literature."
+    },
+    {
+      "id": "12-1",
+      "name": "The Methodology Designer",
+      "type": "research_design",
+      "description": "Master prompts that help design robust research methodologies and experiments."
+    },
+    {
+      "id": "12-2",
+      "name": "The Data Analyst",
+      "type": "data_analysis",
+      "description": "Create prompts that generate insightful data analysis approaches and interpretations."
+    }
+  ],
+  "completion_message": "Congratulations on mastering the Research Laboratory! You've learned to craft prompts that explore scientific literature, design sound methodologies, and analyze data effectively. These skills will serve you well in academic and research contexts, helping to advance knowledge through rigorous inquiry.",
+  "next_level": "13"
+}

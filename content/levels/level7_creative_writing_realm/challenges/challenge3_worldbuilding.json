@@ -1,0 +1,25 @@
+{
+  "id": "7-2",
+  "name": "The World Weaver",
+  "type": "worldbuilding",
+  "description": "The Librarian leads you to a massive atlas filled with blank pages. 'A compelling story needs a world to inhabit,' they explain. 'Show me you can craft a prompt that creates a coherent, vivid setting.'",
+  "promptTask": "**Construct a World Prompt**: As a World Architect (Role), create a detailed setting description (Task) for a fictional society (Subject) with consistent cultural, geographical, and technological elements (Structure), including its history and current conflicts (Elements), formatted as an encyclopedia entry (Format), ensuring internal logical consistency (Constraint).",
+  "solveConditions": {
+    "keywords": ["create", "design", "develop", "craft", "construct"],
+    "target": "world|setting|society|civilization|realm",
+    "requiredPersona": ["world architect", "world builder", "setting designer"],
+    "requiredFormat": ["encyclopedia entry", "encyclopedia", "detailed description", "systematic description"],
+    "requiredKeywordsContext": ["culture", "geography", "technology", "history", "conflicts", "consistent", "logical"]
+  },
+  "successMessage": "The blank pages of the atlas begin to fill with intricate maps, cultural notes, and historical timelines. A world materializes—rich, textured, and believably complex.\n\n'Excellent,' the Librarian nods. 'You understand that effective worldbuilding prompts must balance detail with coherence. Notice how requesting internal consistency creates a more believable setting?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of world? What elements should it include?",
+    "missingPersona": "You need to specify a creative role. Try 'As a World Architect...'",
+    "missingFormat": "You haven't specified how the world should be presented. Add 'formatted as an encyclopedia entry'.",
+    "missingElements": "Your prompt is missing key worldbuilding elements. Include 'cultural, geographical, and technological elements' and 'history and current conflicts'.",
+    "missingConstraint": "You haven't addressed consistency. Add 'ensuring internal logical consistency'.",
+    "tooSimple": "Your worldbuilding prompt doesn't request enough complexity. Specify multiple interconnected elements."
+  },
+  "xpReward": 100,
+  "nextChallenge": null
+}

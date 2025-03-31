@@ -1,0 +1,25 @@
+{
+  "id": "10-0",
+  "name": "The Talent Attractor",
+  "type": "recruitment",
+  "description": "The HR Director points to a terminal displaying a blank job description template. 'The first step in building great teams is attracting the right talent,' they explain. 'Show me you can craft a prompt that creates effective recruitment materials.'",
+  "promptTask": "**Craft a Recruitment Prompt**: As an HR Specialist (Role), create a job description (Task) for a software developer position (Subject) that includes required skills, responsibilities, and company culture (Elements), formatted with clear sections and inclusive language (Format), avoiding biased terminology and unrealistic requirements (Constraints).",
+  "solveConditions": {
+    "keywords": ["create", "write", "generate", "develop", "craft"],
+    "target": "job description|job posting|recruitment|position description",
+    "requiredPersona": ["hr specialist", "recruiter", "talent acquisition", "hiring manager"],
+    "requiredFormat": ["clear sections", "structured", "inclusive language", "accessible"],
+    "requiredKeywordsContext": ["skills", "responsibilities", "qualifications", "company culture", "inclusive", "unbiased"]
+  },
+  "successMessage": "The terminal processes your prompt, crafting a well-structured job description...\n\n```\nSOFTWARE DEVELOPER\n\nAbout Us:\nOur company builds innovative solutions that help businesses streamline their operations. We value collaboration, continuous learning, and work-life balance.\n\nResponsibilities:\n• Design and develop robust software solutions\n• Collaborate with cross-functional teams to define requirements\n• Write clean, maintainable code with appropriate documentation\n• Participate in code reviews and implement feedback\n• Troubleshoot and resolve software defects\n\nRequired Qualifications:\n• Experience with software development in one or more programming languages\n• Knowledge of software design principles and patterns\n• Problem-solving skills and attention to detail\n• Ability to work collaboratively in a team environment\n\nDesired Qualifications:\n• Experience with agile development methodologies\n• Familiarity with cloud platforms\n• Open source contributions\n\nWe encourage applications from candidates with diverse backgrounds and experiences. We offer competitive compensation, professional development opportunities, and flexible work arrangements.\n```\n\n'Excellent,' the HR Director nods. 'You understand that effective recruitment prompts must balance specific requirements with inclusive language. Notice how avoiding biased terminology and unrealistic requirements creates a more accessible job description?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of job? What elements should be included?",
+    "missingPersona": "You need to specify an HR role. Try 'As an HR Specialist...'",
+    "missingFormat": "You haven't specified how the job description should be formatted. Add 'with clear sections and inclusive language'.",
+    "missingElements": "Your prompt is missing key job description elements. Include 'required skills, responsibilities, and company culture'.",
+    "missingConstraints": "You haven't addressed potential biases. Add constraints against 'biased terminology and unrealistic requirements'.",
+    "tooSimple": "Your recruitment prompt doesn't request enough elements. Specify multiple job description components."
+  },
+  "xpReward": 100,
+  "nextChallenge": 1
+}

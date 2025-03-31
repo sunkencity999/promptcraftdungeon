@@ -1,0 +1,23 @@
+{
+  "id": "2-2",
+  "name": "The Detailed Mosaic",
+  "type": "detailed_description",
+  "description": "A large, intricate mosaic covers the wall, depicting various scenes that seem to shift and change depending on how you describe them.",
+  "promptTask": "Goal: Reveal the hidden image in the mosaic.\nLesson: Detailed descriptions in prompts.\nCraft a command that describes what you want to see in the mosaic with rich, specific details about colors, shapes, themes, or elements.",
+  "solveConditions": {
+    "keywords": ["show", "reveal", "display", "depict", "illustrate"],
+    "target": ["mosaic", "image", "picture", "scene", "wall"],
+    "requiredDetailLevel": 3,
+    "detailCategories": ["colors", "shapes", "themes", "elements", "composition", "style"],
+    "minDetailWords": 15
+  },
+  "successMessage": "As you describe the scene in vivid detail - the azure waters of a mountain lake reflecting snow-capped peaks, surrounded by emerald pine forests with a small wooden cabin nestled among the trees - the mosaic tiles shift and align, revealing exactly the serene landscape you envisioned.",
+  "feedback": {
+    "insufficientDetail": "Detail Error: Your description lacks sufficient detail. Try adding more specific elements about colors, shapes, themes, or composition.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with the mosaic. Try asking it to show or reveal something.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're interacting with the mosaic or image.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The mosaic on the wall is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your description is too generic. The mosaic responds to rich, detailed descriptions with specific elements.",
+    "tooShort": "Elaboration Needed: Your description is too brief. The mosaic requires a more elaborate description to respond."
+  }
+}

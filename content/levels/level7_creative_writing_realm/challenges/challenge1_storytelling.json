@@ -1,0 +1,25 @@
+{
+  "id": "7-0",
+  "name": "The Narrative Architect",
+  "type": "storytelling_framework",
+  "description": "The Librarian presents you with a blank tome. 'Create a story with structure,' they whisper. 'But remember - a tale needs conflict, characters, and resolution to truly live.'",
+  "promptTask": "**Craft a Narrative Prompt**: As a Story Architect (Role), create a short story (Task) about an unexpected discovery (Theme) with a clear beginning, middle, and end (Structure), including at least one character transformation (Element), written in third-person perspective (Format).",
+  "solveConditions": {
+    "keywords": ["create", "write", "generate", "craft", "compose"],
+    "target": "story|narrative|tale",
+    "requiredPersona": ["story architect", "narrative designer", "storyteller"],
+    "requiredFormat": ["third-person", "third person"],
+    "requiredKeywordsContext": ["unexpected discovery", "beginning", "middle", "end", "character transformation", "character arc", "change"]
+  },
+  "successMessage": "The blank pages of the tome begin to fill with words...\n\nA tale unfolds of discovery and transformation, structured with precision and care. The Librarian nods approvingly.\n\n'You understand the fundamentals of narrative prompting,' they say. 'A well-structured prompt leads to a well-structured story. Notice how specifying the narrative elements guides the creation process?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of story? What elements should it include?",
+    "missingPersona": "You need to specify a creative role. Try 'As a Story Architect...'",
+    "missingFormat": "You haven't specified the narrative perspective. Add 'in third-person perspective'.",
+    "missingStructure": "Your prompt needs to specify narrative structure. Include 'with clear beginning, middle, and end'.",
+    "missingElement": "You're missing a key narrative element. Add 'including character transformation'.",
+    "missingTheme": "Your prompt lacks a central theme. Include 'about an unexpected discovery'."
+  },
+  "xpReward": 100,
+  "nextChallenge": 1
+}

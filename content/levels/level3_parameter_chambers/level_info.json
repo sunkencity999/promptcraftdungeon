@@ -1,0 +1,21 @@
+{
+  "id": 3,
+  "name": "The Parameter Chambers",
+  "shortDescription": "Learn to use parameters and constraints to refine your prompts",
+  "challenges": [
+    "challenge1_energy",
+    "challenge2_filter",
+    "challenge3_multiple"
+  ],
+  "learningObjectives": [
+    "Understand how parameters refine and focus AI responses",
+    "Master providing multiple parameters in a single prompt",
+    "Learn to use the feedback loop to iteratively improve prompts",
+    "Recognize how specific parameters lead to more precise outputs"
+  ],
+  "skills": ["parameter_specification", "iterative_refinement", "feedback_interpretation"],
+  "prerequisites": ["level2_echoing_caverns"],
+  "nextLevel": "level4_persona_nexus",
+  "estimatedCompletionTime": "25-30 minutes",
+  "difficultyLevel": "intermediate"
+}

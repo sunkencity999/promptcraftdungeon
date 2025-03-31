@@ -1,0 +1,345 @@
+/* Import the font */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    background-color: #000;
+    color: #00FF00; /* Classic green terminal text */
+    font-family: 'Press Start 2P', monospace; /* Retro pixel font */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+#landing-page {
+    text-align: center;
+    border: 2px dashed #00FF00;
+    padding: 40px;
+    max-width: 600px;
+}
+
+#landing-page h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #FF00FF; /* Add a little retro flair */
+}
+
+#landing-page p {
+    font-size: 0.9em;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+#start-button {
+    background-color: #333;
+    color: #00FF00;
+    border: 2px solid #00FF00;
+    padding: 15px 30px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#start-button:hover {
+    background-color: #00FF00;
+    color: #000;
+}
+
+/* Game wrapper for responsive layout */
+#game-wrapper {
+    display: flex;
+    flex-direction: column; /* Stack vertically on mobile */
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Level image container */
+#level-image-container {
+    display: none; /* Hidden by default on mobile */
+    width: 100%;
+    max-width: 500px;
+    height: 85vh;
+    max-height: 700px;
+    border: 3px solid #00FF00;
+    background-color: #0a0a0a;
+    overflow: hidden;
+}
+
+#level-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image covers the container */
+    object-position: center; /* Center the image */
+}
+
+#game-container {
+    width: 90%;
+    max-width: 800px;
+    height: 85vh; /* Slightly taller for more text */
+    max-height: 700px;
+    border: 3px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+    background-color: #0a0a0a; /* Slightly off-black */
+}
+
+/* Responsive layout for tablets and desktops */
+@media (min-width: 768px) {
+    #game-wrapper {
+        flex-direction: row; /* Side by side on larger screens */
+        justify-content: center;
+        width: 95%;
+    }
+    
+    #level-image-container {
+        display: block; /* Show on larger screens */
+        width: 40%;
+    }
+    
+    #game-container {
+        width: 60%;
+    }
+}
+
+#game-output {
+    flex-grow: 1; /* Takes up available space */
+    padding: 15px;
+    overflow-y: auto; /* Enables scrolling */
+    line-height: 1.6;
+    font-size: 0.9em;
+    border-bottom: 1px solid #008000; /* Separator line */
+}
+
+/* Styling for different message types */
+.description { color: #00FF00; } /* Default green */
+.feedback-good { color: #FFFF00; font-style: italic; } /* Yellow for good feedback/success */
+.feedback-bad { color: #FF4136; font-style: italic; } /* Red for bad feedback/errors */
+.feedback-hint { color: #7FDBFF; font-style: italic; } /* Light blue for hints/guidance */
+.npc-dialogue { color: #00FFFF; } /* Cyan for NPCs */
+.command-echo { color: #AAAAAA; } /* Grey for echoing player commands */
+.xp-gain { color: #FFD700; font-weight: bold; } /* Gold for XP/Level Up */
+.task-description { color: #FF851B; font-style: italic;} /* Orange for explicit task descriptions */
+
+#input-area {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #008000;
+}
+
+.prompt-indicator {
+    margin-right: 10px;
+    flex-shrink: 0; /* Prevent the '>' from shrinking */
+}
+
+#prompt-input {
+    flex-grow: 1; /* Takes up remaining space */
+    background-color: transparent;
+    border: none;
+    color: #00FF00;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.9em;
+    outline: none; /* Remove default focus border */
+}
+
+#status-bar {
+    padding: 8px 15px;
+    background-color: #111;
+    border-top: 2px solid #00FF00;
+    font-size: 0.8em;
+    text-align: center;
+    flex-shrink: 0; /* Prevent status bar from shrinking */
+}
+
+/* Small buttons in status bar */
+.small-button {
+    background-color: #333;
+    color: #00FF00;
+    border: 1px solid #00FF00;
+    padding: 3px 8px;
+    font-family: 'Press Start 2P', monospace;
+    cursor: pointer;
+    font-size: 0.7em;
+    margin-left: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.small-button:hover {
+    background-color: #00FF00;
+    color: #000;
+}
+
+/* Educational Content Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: #111;
+    width: 80%;
+    max-width: 900px;
+    height: 80%;
+    border: 3px solid #00FF00;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+    margin: 0 auto; /* Center horizontally */
+    z-index: 1100; /* Ensure it appears above other elements */
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #00FF00;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #FF4136;
+}
+
+.modal-tabs {
+    display: flex;
+    border-bottom: 2px solid #00FF00;
+    padding: 0 10px;
+}
+
+.tab-button {
+    background-color: transparent;
+    color: #00FF00;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tab-button.active {
+    border-bottom: 2px solid #00FF00;
+    background-color: #0a0a0a;
+}
+
+.tab-button:hover {
+    background-color: #222;
+}
+
+#modal-content-container {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+/* Markdown content styling */
+#modal-content-container h1 {
+    color: #FFFF00;
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #00FF00;
+    padding-bottom: 5px;
+}
+
+#modal-content-container h2 {
+    color: #00FFFF;
+    font-size: 1.2em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#modal-content-container h3 {
+    color: #FF851B;
+    font-size: 1em;
+    margin-top: 15px;
+    margin-bottom: 8px;
+}
+
+#modal-content-container p {
+    margin-bottom: 15px;
+}
+
+#modal-content-container ul, 
+#modal-content-container ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+#modal-content-container li {
+    margin-bottom: 5px;
+}
+
+#modal-content-container code {
+    background-color: #222;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 0.9em;
+}
+
+#modal-content-container pre {
+    background-color: #222;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin-bottom: 15px;
+    border-left: 3px solid #00FF00;
+}
+
+#modal-content-container blockquote {
+    border-left: 3px solid #00FFFF;
+    padding-left: 10px;
+    margin-left: 0;
+    color: #AAAAAA;
+}
+
+#modal-content-container strong {
+    color: #FFFF00;
+}
+
+#modal-content-container em {
+    color: #FF851B;
+}
+
+/* Simple scrollbar styling (optional, works in WebKit browsers) */
+#game-output::-webkit-scrollbar,
+#modal-content-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#game-output::-webkit-scrollbar-track,
+#modal-content-container::-webkit-scrollbar-track {
+    background: #111;
+}
+
+#game-output::-webkit-scrollbar-thumb,
+#modal-content-container::-webkit-scrollbar-thumb {
+    background: #008000;
+    border: 1px solid #00FF00;
+}
+
+#game-output::-webkit-scrollbar-thumb:hover,
+#modal-content-container::-webkit-scrollbar-thumb:hover {
+    background: #00FF00;
+}

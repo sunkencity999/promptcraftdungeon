@@ -1,0 +1,22 @@
+{
+  "id": "4-1",
+  "name": "The Format Transformer",
+  "type": "output_format",
+  "description": "A strange device with multiple display screens stands in the center of the room. Each screen shows information in different formats and structures.",
+  "promptTask": "Goal: Configure the device to display information in a specific format.\nLesson: Specifying output formats in prompts.\nCraft a command that clearly specifies the exact format and structure you want the information to be displayed in.",
+  "solveConditions": {
+    "keywords": ["display", "show", "present", "format", "organize"],
+    "target": ["information", "data", "content", "output", "results"],
+    "requiredFormatSpecifiers": ["table", "list", "bullet points", "numbered", "chart", "diagram", "summary", "outline", "json", "markdown"],
+    "formatDetail": true
+  },
+  "successMessage": "As you instruct the device to display the information in a structured table with three columns for category, priority, and status, along with a summary section at the bottom, the screens reconfigure to show exactly the format you specified, revealing the access code in the organized data.",
+  "feedback": {
+    "noFormat": "Format Error: Your command doesn't specify a format for the output. Try requesting a specific structure like a table, list, or outline.",
+    "vagueFormal": "Format Detail Error: Your format specification is too vague. Add more details about how the information should be structured (columns, sections, organization, etc.).",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with this device. Try asking it to display or show information in a specific format.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're requesting information or data to be displayed.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The device displays information and data, which you can request in specific formats.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The device requires specific format instructions to function properly."
+  }
+}

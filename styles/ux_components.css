@@ -1,0 +1,384 @@
+/* UX Components Styles for PromptCraft Dungeon */
+
+/* ===== Skill Tree Styles ===== */
+#skill-tree-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#skill-tree-container {
+    background-color: #1a1a1a;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+}
+
+#skill-tree-svg {
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 20px;
+    overflow: auto;
+}
+
+.skill-node {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.skill-node:hover {
+    transform: scale(1.1);
+}
+
+.mastery-bar {
+    width: 100%;
+    height: 10px;
+    background-color: #444;
+    border-radius: 5px;
+    margin: 5px 0;
+    overflow: hidden;
+}
+
+.mastery-progress {
+    height: 100%;
+    border-radius: 5px;
+}
+
+/* ===== Prompt Visualizer Styles ===== */
+#prompt-visualizer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+#prompt-visualizer-container {
+    background-color: #1a1a1a;
+    border: 2px solid #2196F3;
+    border-radius: 5px;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+    color: #fff;
+    position: relative;
+}
+
+.tab-container {
+    display: flex;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.tab-button {
+    background-color: transparent;
+    border: none;
+    color: #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.tab-button:hover {
+    background-color: #333;
+}
+
+.tab-button.active {
+    color: #2196F3;
+    border-bottom: 2px solid #2196F3;
+}
+
+/* Visualization Styles */
+.visualization-diagram {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    gap: 10px;
+}
+
+.prompt-component {
+    padding: 15px;
+    border-radius: 5px;
+    min-width: 150px;
+    text-align: center;
+}
+
+.prompt-component h4 {
+    margin-top: 0;
+}
+
+.prompt-arrow, .prompt-plus {
+    font-size: 24px;
+    margin: 0 10px;
+}
+
+.instruction {
+    background-color: #2196F3;
+    color: white;
+}
+
+.echo {
+    background-color: #9C27B0;
+    color: white;
+}
+
+.parameters {
+    background-color: #FF9800;
+    color: black;
+}
+
+.persona {
+    background-color: #E91E63;
+    color: white;
+}
+
+.positive {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.negative {
+    background-color: #F44336;
+    color: white;
+}
+
+.response {
+    background-color: #009688;
+    color: white;
+}
+
+.visualization-example {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+
+.example-prompt {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #2196F3;
+}
+
+.instruction-text {
+    font-family: monospace;
+    white-space: pre-wrap;
+}
+
+.visualization-tip {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 4px solid #4CAF50;
+}
+
+/* Prompt Framework Visualization */
+.prompt-framework {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border: 2px solid #FF9800;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.framework-header {
+    background-color: #FF9800;
+    color: black;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.framework-section {
+    padding: 10px;
+    border-bottom: 1px solid #444;
+}
+
+.framework-section:last-child {
+    border-bottom: none;
+}
+
+.framework-section h5 {
+    margin: 0 0 5px 0;
+    color: #FF9800;
+}
+
+.framework-example {
+    background-color: #333;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+}
+
+/* Template Styles */
+.templates-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.template-card {
+    background-color: #2a2a2a;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.template-card.unlocked {
+    border: 1px solid #4CAF50;
+}
+
+.template-card.locked {
+    border: 1px solid #F44336;
+    opacity: 0.7;
+}
+
+.template-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background-color: #333;
+}
+
+.template-header h4 {
+    margin: 0;
+}
+
+.template-level {
+    background-color: #2196F3;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 12px;
+}
+
+.template-description {
+    padding: 10px 15px;
+    margin: 0;
+    border-bottom: 1px solid #444;
+}
+
+.template-content {
+    padding: 15px;
+}
+
+.template-text, .example-text {
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: monospace;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+.template-text {
+    border-left: 4px solid #2196F3;
+}
+
+.example-text {
+    border-left: 4px solid #4CAF50;
+}
+
+.copy-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.copy-button:hover {
+    background-color: #0b7dda;
+}
+
+.locked-message {
+    color: #F44336;
+    font-style: italic;
+}
+
+/* UI Buttons */
+.ui-button {
+    background-color: #2a2a2a;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.ui-button:hover {
+    background-color: #444;
+}
+
+#skill-tree-button {
+    border-color: #4CAF50;
+}
+
+#skill-tree-button:hover {
+    background-color: #4CAF50;
+    color: black;
+}
+
+#prompt-visualizer-button {
+    border-color: #2196F3;
+}
+
+#prompt-visualizer-button:hover {
+    background-color: #2196F3;
+    color: black;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .visualization-diagram {
+        flex-direction: column;
+    }
+    
+    .prompt-component {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .prompt-arrow, .prompt-plus {
+        transform: rotate(90deg);
+        margin: 10px 0;
+    }
+    
+    .prompt-framework {
+        width: 100%;
+    }
+}

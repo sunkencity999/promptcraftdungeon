@@ -1,0 +1,24 @@
+{
+  "id": "2-0",
+  "name": "The Resonant Crystal",
+  "type": "specificity",
+  "description": "A large crystal formation glows dimly in the center of the cavern. Its surface is etched with intricate patterns that seem to respond to sound.",
+  "promptTask": "Goal: Activate the crystal.\nLesson: Specificity in prompts.\nCraft a command that specifies exactly how you want to interact with the crystal, providing specific details.",
+  "solveConditions": {
+    "keywords": ["tap", "touch", "activate"],
+    "target": "crystal",
+    "requiredSpecificity": ["gently", "lightly", "carefully", "center", "pattern", "etchings"],
+    "negativeKeywords": ["break", "smash", "hit hard"]
+  },
+  "successMessage": "As you gently tap the center of the crystal's etched pattern, it begins to glow brighter, resonating with a soft hum that fills the cavern.",
+  "feedback": {
+    "vague": "Specificity Error: Your command lacks detail. How exactly do you want to interact with the crystal?",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with this delicate crystal.",
+    "noTarget": "Target Error: What do you want to {action}? Specify the target of your action.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The crystal is the focal point of this chamber.",
+    "tooGeneric": "Detail Required: Your command needs more specificity. How/where exactly do you want to {action} the {target}?",
+    "negativeAction": "Approach Error: A gentler approach is needed. The crystal appears delicate."
+  },
+  "xpReward": 30,
+  "nextChallenge": 1
+}

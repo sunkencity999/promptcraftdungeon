@@ -1,0 +1,22 @@
+{
+  "id": 10,
+  "name": "HR Management Suite",
+  "shortDescription": "Master prompts for human resources, employee development, and workplace communication",
+  "challenges": [
+    "challenge1_recruitment",
+    "challenge2_performance_evaluation",
+    "challenge3_workplace_communication"
+  ],
+  "learningObjectives": [
+    "Craft prompts that generate effective job descriptions and candidate evaluation criteria",
+    "Design prompts for fair and constructive performance evaluations and feedback",
+    "Create prompts that produce clear, empathetic workplace communications",
+    "Learn techniques for ensuring inclusive and unbiased language in HR contexts",
+    "Master prompting for different HR scenarios and stakeholder perspectives"
+  ],
+  "skills": ["recruitment", "performance_evaluation", "workplace_communication", "inclusive_language", "feedback_generation"],
+  "prerequisites": ["level9_data_analysis_nexus"],
+  "nextLevel": 11,
+  "estimatedCompletionTime": "45-50 minutes",
+  "difficultyLevel": "industry-specific"
+}

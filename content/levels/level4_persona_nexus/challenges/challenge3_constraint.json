@@ -1,0 +1,22 @@
+{
+  "id": "4-2",
+  "name": "The Perspective Portal",
+  "type": "persona_constraint",
+  "description": "A shimmering portal stands before you, showing reflections of different personas and perspectives. It seems to respond to specific viewpoint instructions.",
+  "promptTask": "Goal: Align the portal to a specific perspective.\nLesson: Using persona and perspective constraints in prompts.\nCraft a command that specifies a particular persona, role, or perspective that should be adopted when viewing through the portal.",
+  "solveConditions": {
+    "keywords": ["view", "see", "show", "analyze", "examine"],
+    "target": ["portal", "perspective", "viewpoint", "lens", "angle"],
+    "requiredPersona": true,
+    "personaIndicators": ["as a", "from the perspective of", "through the eyes of", "in the role of", "with the expertise of", "thinking like"]
+  },
+  "successMessage": "As you instruct the portal to show you the chamber from the perspective of an experienced architect with a focus on historical preservation, the shimmering surface shifts to reveal hidden structural elements and ancient design patterns that were previously invisible, pointing the way forward.",
+  "feedback": {
+    "noPersona": "Perspective Error: Your command doesn't specify a persona or perspective. Try requesting to view things 'as a [specific role]' or 'from the perspective of [specific viewpoint]'.",
+    "vaguePersona": "Persona Detail Error: Your persona specification is too vague. Try a more specific role, expertise, or perspective.",
+    "wrongAction": "Action Error: '{action}' is not the appropriate way to interact with the portal. Try asking to view or see through it from a specific perspective.",
+    "noTarget": "Target Error: What do you want to {action}? Specify that you're interacting with the portal or requesting a particular perspective.",
+    "wrongTarget": "Target Error: There is no '{target}' here. The perspective portal is the focal point of this chamber.",
+    "tooGeneric": "Specificity Required: Your command is too generic. The portal requires a specific persona or perspective to function properly."
+  }
+}

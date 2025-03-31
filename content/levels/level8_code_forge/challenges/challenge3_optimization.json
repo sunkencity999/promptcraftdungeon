@@ -1,0 +1,24 @@
+{
+  "id": "8-2",
+  "name": "The Performance Tuner",
+  "type": "optimization",
+  "description": "The Code Master displays a function that works but runs inefficiently. 'Functional code isn't always optimal code,' they explain. 'Show me you can craft a prompt that improves performance without sacrificing readability.'",
+  "promptTask": "**Craft an Optimization Prompt**: As a Performance Engineer (Role), refactor a data processing function (Task) that handles large arrays inefficiently (Problem) to improve time complexity and memory usage (Goals), while maintaining readability and adding performance analysis comments (Requirements), using modern JavaScript features (Tools).",
+  "solveConditions": {
+    "keywords": ["optimize", "refactor", "improve", "enhance", "streamline"],
+    "target": "performance|efficiency|speed|memory|complexity",
+    "requiredPersona": ["performance engineer", "optimization specialist", "software engineer", "developer"],
+    "requiredKeywordsContext": ["time complexity", "memory usage", "data processing", "arrays", "readability", "analysis", "modern"]
+  },
+  "successMessage": "The terminal displays the inefficient code, then begins transforming it into an optimized version...\n\n```javascript\n// ORIGINAL INEFFICIENT CODE\nfunction findDuplicates(array) {\n  const duplicates = [];\n  \n  for (let i = 0; i < array.length; i++) {\n    for (let j = 0; j < array.length; j++) {\n      if (i !== j && array[i] === array[j] && !duplicates.includes(array[i])) {\n        duplicates.push(array[i]);\n      }\n    }\n  }\n  \n  return duplicates;\n}\n\n// OPTIMIZED CODE\nfunction findDuplicates(array) {\n  // Performance: O(n) time complexity instead of O(n²)\n  // Memory: Uses a Set for faster lookups and to track seen values\n  \n  const seen = new Set();\n  const duplicates = new Set();\n  \n  // Single pass through the array - O(n)\n  for (const item of array) {\n    // Set.has() is O(1) vs array.includes() which is O(n)\n    if (seen.has(item)) {\n      duplicates.add(item);\n    } else {\n      seen.add(item);\n    }\n  }\n  \n  // Convert Set to Array for return value consistency\n  return [...duplicates];\n}\n```\n\n'Excellent,' the Code Master nods. 'You understand that effective optimization prompts must balance performance improvements with code readability. Notice how requesting performance analysis comments helps explain the optimization techniques used?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of optimization? What aspects of performance need improvement?",
+    "missingPersona": "You need to specify a technical role. Try 'As a Performance Engineer...'",
+    "missingContext": "You haven't specified what the code does. Add 'a data processing function that handles large arrays'.",
+    "missingGoals": "Your prompt is missing specific optimization goals. Include 'improve time complexity and memory usage'.",
+    "missingRequirements": "You haven't addressed code quality. Add requirements for 'maintaining readability and adding performance analysis comments'.",
+    "missingTools": "You haven't specified what tools or features to use. Add 'using modern JavaScript features'."
+  },
+  "xpReward": 100,
+  "nextChallenge": null
+}

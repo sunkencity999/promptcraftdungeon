@@ -1,0 +1,25 @@
+{
+  "id": "10-2",
+  "name": "The Communication Architect",
+  "type": "workplace_communication",
+  "description": "The HR Director points to a terminal displaying a sensitive workplace situation. 'Clear, empathetic communication is essential,' they explain. 'Show me you can craft a prompt that creates effective workplace messages.'",
+  "promptTask": "**Craft a Communication Prompt**: As an HR Communications Specialist (Role), create an announcement (Task) about an upcoming organizational restructuring (Subject) that explains the rationale, timeline, and impact on employees (Elements), written with clarity, empathy, and transparency (Tone), while avoiding corporate jargon and providing specific next steps (Requirements).",
+  "solveConditions": {
+    "keywords": ["create", "write", "draft", "compose", "develop"],
+    "target": "announcement|communication|message|email",
+    "requiredPersona": ["hr communications", "hr specialist", "communications manager", "hr professional"],
+    "requiredFormat": ["clear", "empathetic", "transparent", "professional"],
+    "requiredKeywordsContext": ["restructuring", "rationale", "timeline", "impact", "next steps", "avoid jargon"]
+  },
+  "successMessage": "The terminal processes your prompt, crafting a thoughtful organizational announcement...\n\n```\nSubject: Important Announcement: Upcoming Organizational Changes\n\nDear Team Members,\n\nI'm writing to share important information about organizational changes that will take place over the next three months. We want to provide you with a clear understanding of what's happening, why these changes are necessary, and how they may affect you.\n\nWhat is changing:\nWe are restructuring our department organization to better align with our strategic priorities and improve collaboration across teams. This will involve consolidating some functions and creating new teams focused on emerging priorities.\n\nWhy these changes are necessary:\nAs our industry continues to evolve, we need to position ourselves to respond more quickly to market changes and customer needs. This restructuring will help us reduce duplication of efforts, streamline decision-making, and invest more resources in growth areas.\n\nTimeline:\n• June 1-15: Leadership meetings and detailed planning\n• June 16: Team-specific meetings to discuss changes\n• July 1: New structure officially begins\n• July-August: Transition period with additional support\n\nHow this may affect you:\nSome team members will report to new managers, while others may take on modified responsibilities. We do not anticipate any reduction in workforce. Your specific role changes, if any, will be discussed in individual meetings with your manager between June 16-30.\n\nNext steps:\n1. Attend the all-hands meeting on May 25th at 10:00 AM where leadership will present the changes and answer questions\n2. Watch for a calendar invitation for your team-specific meeting\n3. Prepare questions for your one-on-one discussion\n4. Access additional resources on the HR portal [link]\n\nWe understand that organizational changes can create uncertainty. Please know that we value each of you and are committed to making this transition as smooth as possible. Your managers and the HR team are available to address your questions and concerns.\n\nIf you have immediate questions, please contact your manager or email hr@company.com.\n\nSincerely,\n[Name]\nHR Director\n```\n\n'Excellent,' the HR Director nods. 'You understand that effective communication prompts must balance clarity with empathy. Notice how providing specific details and next steps helps reduce uncertainty during a potentially stressful change?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of communication? What elements should be included?",
+    "missingPersona": "You need to specify an HR communications role. Try 'As an HR Communications Specialist...'",
+    "missingTone": "You haven't specified the tone of the communication. Add 'written with clarity, empathy, and transparency'.",
+    "missingElements": "Your prompt is missing key communication elements. Include 'rationale, timeline, and impact on employees'.",
+    "missingRequirements": "You haven't addressed common communication issues. Add requirements for 'avoiding corporate jargon and providing specific next steps'.",
+    "tooSimple": "Your communication prompt doesn't request enough elements. Specify multiple communication components."
+  },
+  "xpReward": 100,
+  "nextChallenge": null
+}

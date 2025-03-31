@@ -1,0 +1,25 @@
+{
+  "id": "9-1",
+  "name": "The Visual Interpreter",
+  "type": "data_visualization",
+  "description": "The Data Sage points to a wall of incomprehensible numbers and statistics. 'Raw data overwhelms the human mind,' they explain. 'Show me you can craft a prompt that transforms these numbers into visual insights that tell a compelling story.'",
+  "promptTask": "**Craft a Data Visualization Prompt**: As a Data Visualization Specialist (Role), create visualizations (Task) for a customer segmentation analysis (Subject) using appropriate chart types for different data relationships (Methods), ensuring visual hierarchy, clear annotations, and consistent color schemes (Format), with explanatory text for key insights (Requirements).",
+  "solveConditions": {
+    "keywords": ["visualize", "create", "design", "generate", "produce"],
+    "target": "visualization|chart|graph|plot|dashboard",
+    "requiredPersona": ["data visualization specialist", "visualization expert", "data scientist", "analyst"],
+    "requiredFormat": ["clear", "annotated", "labeled", "consistent", "hierarchy"],
+    "requiredKeywordsContext": ["chart types", "color scheme", "explanatory", "insights", "story", "patterns"]
+  },
+  "successMessage": "The terminal processes your prompt, transforming the raw data into a series of elegant visualizations...\n\nA dashboard appears with carefully selected chart types, each revealing different aspects of customer segments. Color coding highlights key patterns, while annotations guide the viewer through the story the data tells.\n\n'Impressive,' the Data Sage nods. 'You understand that effective visualization prompts must specify both technical requirements and narrative elements. Notice how requesting explanatory text transforms mere pictures into actionable insights?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of visualizations? What aspects should be highlighted?",
+    "missingPersona": "You need to specify a visualization role. Try 'As a Data Visualization Specialist...'",
+    "missingMethods": "Your prompt is missing specific visualization methods. Include 'appropriate chart types for different data relationships'.",
+    "missingFormat": "You haven't specified how visualizations should be formatted. Add 'ensuring visual hierarchy, clear annotations, and consistent color schemes'.",
+    "missingRequirements": "You haven't addressed how insights should be communicated. Add requirements for 'explanatory text for key insights'.",
+    "tooSimple": "Your visualization prompt doesn't request enough design depth. Specify multiple visualization elements and formatting requirements."
+  },
+  "xpReward": 100,
+  "nextChallenge": 2
+}

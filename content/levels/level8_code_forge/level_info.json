@@ -1,0 +1,22 @@
+{
+  "id": 8,
+  "name": "The Code Forge",
+  "shortDescription": "Master prompts for software development, debugging, and code optimization",
+  "challenges": [
+    "challenge1_code_generation",
+    "challenge2_debugging",
+    "challenge3_optimization"
+  ],
+  "learningObjectives": [
+    "Craft prompts that generate clean, efficient, and well-documented code",
+    "Design debugging prompts that effectively identify and fix issues",
+    "Create prompts for optimizing existing code for performance and readability",
+    "Learn techniques for maintaining consistency across multiple code-related prompts",
+    "Master prompting for different programming languages and paradigms"
+  ],
+  "skills": ["code_generation", "debugging", "optimization", "documentation", "architecture_design"],
+  "prerequisites": ["level7_creative_writing_realm"],
+  "nextLevel": 9,
+  "estimatedCompletionTime": "45-50 minutes",
+  "difficultyLevel": "industry-specific"
+}

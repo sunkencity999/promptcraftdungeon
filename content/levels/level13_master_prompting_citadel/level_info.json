@@ -1,0 +1,28 @@
+{
+  "id": "13",
+  "name": "Master Prompting Citadel",
+  "description": "The ultimate challenge for prompt engineers, combining all skills into advanced, multi-faceted prompting techniques.",
+  "introduction": "Welcome to the Master Prompting Citadel, the pinnacle of prompt engineering mastery. Here, you'll combine all the skills you've learned to craft sophisticated, multi-dimensional prompts that demonstrate true mastery of the art.",
+  "challenges": [
+    {
+      "id": "13-0",
+      "name": "The Prompt Architect",
+      "type": "meta_prompting",
+      "description": "Learn to craft meta-prompts that guide the creation of other prompts."
+    },
+    {
+      "id": "13-1",
+      "name": "The Adaptive Engineer",
+      "type": "adaptive_prompting",
+      "description": "Master prompts that evolve and adapt based on initial responses."
+    },
+    {
+      "id": "13-2",
+      "name": "The Grand Master",
+      "type": "integrated_prompting",
+      "description": "Create sophisticated prompts that integrate multiple techniques and domains."
+    }
+  ],
+  "completion_message": "Congratulations! You have mastered the art of prompt engineering and completed the PromptCraft Dungeon. Your journey from novice to expert has equipped you with the skills to craft prompts of extraordinary effectiveness across all domains. You are now a true PromptCraft Engineer!",
+  "next_level": null
+}

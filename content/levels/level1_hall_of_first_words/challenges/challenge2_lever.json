@@ -1,0 +1,25 @@
+{
+  "id": "1-1",
+  "name": "The Ancient Lever",
+  "type": "lever",
+  "description": "Master the basics of clear action-target commands by operating an ancient lever mechanism.",
+  "prompt_task": "You encounter an ancient stone lever embedded in the wall. It appears to be a mechanism that might open a hidden passage. How do you interact with it?",
+  "solve_conditions": {
+    "required_elements": ["pull", "lever"],
+    "forbidden_elements": [],
+    "min_length": 2,
+    "max_length": 5
+  },
+  "feedback": {
+    "success": "With a clear command to 'pull lever', you activate the ancient mechanism. The stone wall rumbles and shifts, revealing a hidden passage forward. Your precise instruction demonstrates mastery of the basic action-target structure.",
+    "too_vague": "Your instruction lacks clarity. Remember to use a specific action verb followed by the target object. Try a simple, direct command like 'pull lever'.",
+    "too_complex": "Your instruction is unnecessarily complex. In prompt engineering, simplicity and clarity are key. Try using just an action verb and the target object.",
+    "wrong_approach": "That approach doesn't seem to work with the lever. Consider what action would be appropriate for a lever mechanism and express it clearly."
+  },
+  "hints": [
+    "Think about the most common action associated with levers.",
+    "Keep your command simple: just an action verb and the target object.",
+    "The command should follow the basic [Action] [Target] structure."
+  ],
+  "completion_message": "Excellent! You've mastered the fundamental action-target structure of effective prompts. By using clear, concise commands like 'pull lever', you ensure your instructions are interpreted exactly as intended. This basic structure forms the foundation of all prompt engineering."
+}

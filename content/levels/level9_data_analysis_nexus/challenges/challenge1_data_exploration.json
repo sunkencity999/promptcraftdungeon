@@ -1,0 +1,25 @@
+{
+  "id": "9-0",
+  "name": "The Data Explorer",
+  "type": "data_exploration",
+  "description": "The Data Sage gestures to a terminal displaying a raw dataset. 'Before insights come understanding,' they explain. 'Show me you can craft a prompt that thoroughly explores and describes a dataset.'",
+  "promptTask": "**Craft a Data Exploration Prompt**: As a Data Analyst (Role), perform exploratory data analysis (Task) on a customer transaction dataset (Subject) including statistical summaries, distribution analysis, and correlation identification (Methods), presenting findings with clear structure and explanations (Format), highlighting potential data quality issues (Requirements).",
+  "solveConditions": {
+    "keywords": ["analyze", "explore", "examine", "investigate", "summarize"],
+    "target": "data|dataset|transactions|records",
+    "requiredPersona": ["data analyst", "data scientist", "statistician", "analyst"],
+    "requiredFormat": ["summary", "structured", "explanations", "clear"],
+    "requiredKeywordsContext": ["statistical", "distribution", "correlation", "quality", "exploratory", "summary", "patterns"]
+  },
+  "successMessage": "The terminal processes your prompt, data flowing through analytical algorithms...\n\nA comprehensive exploration appears, revealing the dataset's structure, statistical properties, distributions, and relationships. Key patterns and anomalies are highlighted with explanatory notes.\n\n'Excellent,' the Data Sage nods. 'You understand that effective data exploration prompts must specify both analytical methods and presentation requirements. Notice how requesting data quality checks reveals potential issues that might affect later analyses?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of analysis? What aspects of the data should be explored?",
+    "missingPersona": "You need to specify an analytical role. Try 'As a Data Analyst...'",
+    "missingMethods": "Your prompt is missing specific analytical methods. Include 'statistical summaries, distribution analysis, and correlation identification'.",
+    "missingFormat": "You haven't specified how results should be presented. Add 'presenting findings with clear structure and explanations'.",
+    "missingRequirements": "You haven't addressed data quality. Add requirements for 'highlighting potential data quality issues'.",
+    "tooSimple": "Your exploration prompt doesn't request enough analytical depth. Specify multiple analytical methods."
+  },
+  "xpReward": 100,
+  "nextChallenge": 1
+}

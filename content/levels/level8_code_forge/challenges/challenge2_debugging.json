@@ -1,0 +1,24 @@
+{
+  "id": "8-1",
+  "name": "The Bug Hunter",
+  "type": "debugging",
+  "description": "The Code Master points to a terminal displaying code with errors. 'Even the most skilled developers encounter bugs,' they explain. 'Show me you can craft a prompt that effectively diagnoses and fixes issues.'",
+  "promptTask": "**Craft a Debugging Prompt**: As a Software Debugger (Role), analyze and fix the bugs (Task) in a user authentication function (Context) that has issues with password comparison and error handling (Problem Areas), providing explanations for each fix (Documentation), ensuring the code follows security best practices (Standards).",
+  "solveConditions": {
+    "keywords": ["debug", "fix", "analyze", "solve", "repair"],
+    "target": "bugs|errors|issues|problems",
+    "requiredPersona": ["debugger", "software engineer", "developer", "programmer"],
+    "requiredKeywordsContext": ["authentication", "password", "comparison", "error handling", "security", "explanation", "fix"]
+  },
+  "successMessage": "The terminal displays the buggy code, then begins highlighting issues and applying fixes...\n\n```javascript\n// ORIGINAL CODE WITH BUGS\nfunction authenticateUser(username, password) {\n  const user = findUserByUsername(username);\n  \n  if (user.password == password) {\n    return { success: true, user: user };\n  } else {\n    return { success: false, message: 'Authentication failed' };\n  }\n}\n\n// FIXED CODE\nfunction authenticateUser(username, password) {\n  // Added null check for username\n  if (!username || !password) {\n    return { success: false, message: 'Username and password are required' };\n  }\n  \n  const user = findUserByUsername(username);\n  \n  // Added check if user exists\n  if (!user) {\n    // Use vague message for security (don't reveal if username exists)\n    return { success: false, message: 'Authentication failed' };\n  }\n  \n  // Fixed: Use strict comparison and secure comparison method\n  if (comparePasswordSecurely(password, user.password)) {\n    // Don't return the password in the user object\n    const { password, ...userWithoutPassword } = user;\n    return { success: true, user: userWithoutPassword };\n  } else {\n    return { success: false, message: 'Authentication failed' };\n  }\n}\n```\n\n'Excellent,' the Code Master nods. 'You understand that effective debugging prompts must identify specific problem areas while also considering best practices and security implications. Notice how specifying the need for explanations leads to more educational fixes?'",
+  "feedback": {
+    "vague": "Your prompt lacks specificity. What kind of bugs? What areas of the code have issues?",
+    "missingPersona": "You need to specify a technical role. Try 'As a Software Debugger...'",
+    "missingContext": "You haven't specified what the code does. Add 'in a user authentication function'.",
+    "missingProblemAreas": "Your prompt is missing specific problem areas. Include 'issues with password comparison and error handling'.",
+    "missingStandards": "You haven't addressed code quality. Add requirements for 'security best practices'.",
+    "missingDocumentation": "You haven't requested explanations. Add 'providing explanations for each fix'."
+  },
+  "xpReward": 100,
+  "nextChallenge": 2
+}

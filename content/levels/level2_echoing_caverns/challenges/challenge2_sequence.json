@@ -1,0 +1,22 @@
+{
+  "id": "2-1",
+  "name": "The Sequential Mechanism",
+  "type": "sequential_instructions",
+  "description": "A complex mechanical device sits on a pedestal. It has multiple components that appear to require activation in a specific order.",
+  "promptTask": "Goal: Activate the mechanism.\nLesson: Sequential instructions in prompts.\nCraft a command that provides a clear sequence of steps to activate the different parts of the mechanism in the correct order.",
+  "solveConditions": {
+    "keywords": ["turn", "rotate", "press", "pull", "activate"],
+    "target": ["dial", "lever", "button", "mechanism", "switch"],
+    "requiredSequence": true,
+    "sequenceTerms": ["first", "then", "next", "after", "finally", "lastly", "before", "followed by", "1", "2", "3"]
+  },
+  "successMessage": "As you follow the precise sequence of steps - turning the central dial clockwise, then pressing the red button, followed by pulling the side lever - the mechanism whirs to life, revealing a hidden passage.",
+  "feedback": {
+    "noSequence": "Sequence Error: Your command needs to specify a clear sequence of steps. Try using words like 'first,' 'then,' 'finally,' or numbered steps.",
+    "incompleteSequence": "Incomplete Sequence: The mechanism requires multiple actions in sequence. Your command only addresses part of the process.",
+    "wrongAction": "Action Error: '{action}' is not an appropriate way to interact with this mechanical device.",
+    "noTarget": "Target Error: What do you want to {action}? Specify the components you wish to interact with.",
+    "wrongTarget": "Target Error: There is no '{target}' here. Focus on the components of the mechanism (dial, lever, button, etc.).",
+    "tooGeneric": "Detail Required: Your command needs more specificity about which components to interact with and in what order."
+  }
+}

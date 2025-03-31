@@ -1,0 +1,21 @@
+{
+  "id": 2,
+  "name": "The Echoing Caverns",
+  "shortDescription": "Master specificity and sequential instructions in your prompts",
+  "challenges": [
+    "challenge1_crystal",
+    "challenge2_sequence",
+    "challenge3_detail"
+  ],
+  "learningObjectives": [
+    "Understand the importance of specificity in prompts",
+    "Learn to provide detailed descriptions for better results",
+    "Master sequential instructions for multi-step tasks",
+    "Recognize how added detail improves AI understanding"
+  ],
+  "skills": ["specificity", "sequential_instructions", "detailed_description"],
+  "prerequisites": ["level1_hall_of_first_words"],
+  "nextLevel": "level3_parameter_chambers",
+  "estimatedCompletionTime": "20-25 minutes",
+  "difficultyLevel": "beginner-intermediate"
+}

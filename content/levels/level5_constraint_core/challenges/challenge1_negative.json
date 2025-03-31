@@ -1,0 +1,26 @@
+{
+  "id": "5-0",
+  "name": "The Data Filter",
+  "type": "negative_constraints",
+  "description": "Core shows raw data: '...Gamma stable... Delta high... Epsilon offline... Anomaly Zeta...'",
+  "promptTask": "**Synthesize**: As Lead Technician (Persona), generate diagnostic report (Task) for sectors with 'offline'/'anomaly' (Context/Filter), as numbered list (Format). All elements must be present.",
+  "solveConditions": {
+    "keywords": ["request", "generate", "create", "get", "diagnostic", "report", "status"],
+    "target": "sectors|report|diagnostics",
+    "requiredPersona": ["lead technician", "senior engineer", "chief diagnostician"],
+    "requiredFormat": ["numbered list", "ordered list"],
+    "requiredKeywordsContext": ["offline", "anomaly"]
+  },
+  "successMessage": "Acknowledged. Generating report:\n1. Epsilon: Offline\n2. Zeta: Anomaly",
+  "feedback": {
+    "vague": "Specify report details.",
+    "wrongAction": "Doesn't generate report.",
+    "noTarget": "Report for *what*?",
+    "missingPersona": "Synthesis Fail: Missing Persona ('As a Lead Technician...').",
+    "missingFormat": "Synthesis Fail: Missing Format ('as numbered list').",
+    "missingFilter": "Synthesis Fail: Missing Filter ('only offline or anomaly').",
+    "tooComplex": "Structure carefully: Role->Action->Target->Filter->Format."
+  },
+  "xpReward": 80,
+  "nextChallenge": 1
+}
