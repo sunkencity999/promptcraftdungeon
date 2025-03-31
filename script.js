@@ -12,6 +12,8 @@ const playerXpDisplay = document.getElementById('player-xp');
 const xpToNextLevelDisplay = document.getElementById('xp-next');
 const playerLocationDisplay = document.getElementById('player-location');
 const promptHelpButton = document.getElementById('prompt-help-button');
+const narrationButton = document.getElementById('narration-button');
+const narrationAudio = document.getElementById('narration-audio');
 
 // --- Content Loading Status ---
 let contentLoaded = false;
@@ -744,5 +746,47 @@ promptHelpButton.addEventListener('click', () => {
     promptVisualizer.updateContext(gameState.currentLevel, `${gameState.currentLevel}-${gameState.currentChallenge}`);
     promptVisualizer.showModal();
 });
+
+// Connect narration button to play level audio
+narrationButton.addEventListener('click', () => {
+    playLevelNarration();
+});
+
+/**
+ * Toggles play/pause of the narration audio for the current level
+ */
+function playLevelNarration() {
+    // If audio is already playing, pause it
+    if (!narrationAudio.paused) {
+        narrationAudio.pause();
+        displayOutput("Narration paused.", 'feedback-hint');
+        narrationButton.innerHTML = "🔊 Narration"; // Reset button text
+        return;
+    }
+    
+    const currentLevel = gameState.currentLevel;
+    if (currentLevel < 1 || currentLevel > 13) {
+        displayOutput("No narration available for this level.", 'feedback-hint');
+        return;
+    }
+    
+    // Set the audio source to the appropriate level audio file (only if it's not already set)
+    const audioPath = `./audio/level${currentLevel}audio.mp3`;
+    if (narrationAudio.src !== window.location.origin + audioPath) {
+        narrationAudio.src = audioPath;
+    }
+    
+    // Play the audio
+    narrationAudio.play()
+        .then(() => {
+            console.log(`Playing narration for level ${currentLevel}`);
+            displayOutput("Playing level narration...", 'feedback-hint');
+            narrationButton.innerHTML = "⏸️ Pause"; // Change button text while playing
+        })
+        .catch(error => {
+            console.error(`Error playing narration: ${error}`);
+            displayOutput("Could not play narration audio.", 'feedback-bad');
+        });
+}
 
 console.log("Script loaded.");
