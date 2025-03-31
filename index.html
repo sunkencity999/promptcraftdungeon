@@ -77,6 +77,152 @@
     <!-- Add Markdown parser (can often be loaded normally or deferred) -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
+    <!-- Inline script for narration button (no defer) -->
+    <script>
+        // This script implements the narration functionality directly and independently
+        // We use an IIFE (Immediately Invoked Function Expression) to avoid polluting the global scope
+        (function() {
+            // Wait a short time after DOMContentLoaded to ensure we're the last to set up the button
+            document.addEventListener('DOMContentLoaded', function() {
+                // Give script.js a chance to initialize first, then override its behavior
+                setTimeout(function() {
+                    console.log('Setting up narration button from inline script (with delay)');
+                    
+                    // Get references to the elements
+                    const narrationBtn = document.getElementById('narration-button');
+                    if (!narrationBtn) {
+                        console.error('Narration button not found in DOM');
+                        return;
+                    }
+                    
+                    // Create a completely new button to replace the existing one
+                    const newButton = document.createElement('button');
+                    newButton.id = 'narration-button';
+                    newButton.className = 'small-button';
+                    newButton.innerHTML = '🔊 Narration';
+                    
+                    // Replace the old button with the new one
+                    narrationBtn.parentNode.replaceChild(newButton, narrationBtn);
+                    
+                    // Get the audio element
+                    let narrationAudio = document.getElementById('narration-audio');
+                    
+                    // Track if we're currently playing audio
+                    let isPlaying = false;
+                    let currentAudioLevel = null;
+            
+                    // Define a local narration function (not exposed to window)
+                    function playNarration() {
+                console.log('Narration function called from inline script');
+                
+                // Get the current level from the display element
+                const levelElement = document.getElementById('player-level-value');
+                const currentLevel = levelElement ? parseInt(levelElement.textContent, 10) : 1;
+                console.log('Current level from display:', currentLevel);
+                
+                // If audio is already playing, pause it
+                if (isPlaying) {
+                    if (narrationAudio) {
+                        narrationAudio.pause();
+                        isPlaying = false;
+                        console.log('Narration paused');
+                        const gameOutput = document.getElementById('game-output');
+                        if (gameOutput) {
+                            const p = document.createElement('p');
+                            p.textContent = "Narration paused.";
+                            p.className = 'feedback-hint';
+                            gameOutput.appendChild(p);
+                            gameOutput.scrollTop = gameOutput.scrollHeight;
+                        }
+                        freshNarrationBtn.innerHTML = "🔊 Narration"; // Reset button text
+                    }
+                    return;
+                }
+                
+                // Validate level
+                if (currentLevel < 1 || currentLevel > 13) {
+                    console.error('Invalid level:', currentLevel);
+                    alert('No narration available for this level.');
+                    return;
+                }
+                
+                try {
+                    // First, create a new Audio object instead of reusing the existing one
+                    // This helps avoid race conditions with previous play/pause operations
+                    const newAudio = new Audio();
+                    
+                    // Set up event listeners before setting the source
+                    newAudio.addEventListener('canplaythrough', function() {
+                        console.log('Audio can play through, starting playback');
+                        // Update UI before attempting to play
+                        const gameOutput = document.getElementById('game-output');
+                        if (gameOutput) {
+                            const p = document.createElement('p');
+                            p.textContent = "Playing level narration...";
+                            p.className = 'feedback-hint';
+                            gameOutput.appendChild(p);
+                            gameOutput.scrollTop = gameOutput.scrollHeight;
+                        }
+                        narrationBtn.innerHTML = "⏸️ Pause"; // Change button text while playing
+                        
+                        // Update our reference and use the new Audio object directly
+                        narrationAudio = newAudio;
+                        
+                        // Set our tracking variables
+                        isPlaying = true;
+                        currentAudioLevel = currentLevel;
+                        
+                        // Play the audio
+                        newAudio.play().catch(function(error) {
+                            console.error('Play error after canplaythrough:', error);
+                            isPlaying = false;
+                            handleAudioError(error);
+                        });
+                        
+                        // Set up ended event to reset state
+                        newAudio.addEventListener('ended', function() {
+                            console.log('Audio playback ended');
+                            isPlaying = false;
+                            freshNarrationBtn.innerHTML = "🔊 Narration"; // Reset button text
+                        });
+                    }, { once: true }); // Only trigger once
+                    
+                    newAudio.addEventListener('error', function(e) {
+                        console.error('Audio loading error:', e);
+                        handleAudioError(new Error('Failed to load audio file'));
+                    });
+                    
+                    // Function to handle audio errors
+                    function handleAudioError(error) {
+                        console.error('Error playing narration:', error);
+                        narrationBtn.innerHTML = "🔊 Narration"; // Reset button text
+                        alert('Could not play narration audio. Please try again.');
+                    }
+                    
+                    // Set the audio source (this will start loading the audio)
+                    const audioPath = `./audio/level${currentLevel}audio.mp3`;
+                    console.log('Setting audio source to:', audioPath);
+                    newAudio.src = audioPath;
+                    newAudio.load(); // Explicitly load the audio
+                } catch (error) {
+                    console.error('General audio setup error:', error);
+                    alert('Audio playback error: ' + error.message);
+                }
+            };
+            
+                    // Attach click handler to the new button
+                    newButton.addEventListener('click', function(e) {
+                        e.preventDefault(); // Prevent any default behavior
+                        e.stopPropagation(); // Stop event bubbling
+                        console.log('Narration button clicked (from inline script)');
+                        playNarration();
+                    });
+                    console.log('Narration button handler attached (from inline script)');
+                }, 100); // 100ms delay to ensure we run after script.js
+            });
+        })();
+    </script>
+    
     <!-- Load custom scripts sequentially after DOM parsing -->
     <script src="content_loader.js" defer></script>
     <script src="educational_content.js" defer></script>

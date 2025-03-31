@@ -738,7 +738,10 @@ promptInput.addEventListener('keypress', function(event) {
 });
 document.addEventListener('DOMContentLoaded', (event) => { 
   console.log("DOM ready. Init game..."); 
-  initializeGame(); 
+  initializeGame();
+  
+  // Narration button is now handled by inline script in index.html
+  console.log("Narration functionality is handled by inline script");
 });
 
 // Connect prompt help button to prompt visualizer
@@ -747,15 +750,15 @@ promptHelpButton.addEventListener('click', () => {
     promptVisualizer.showModal();
 });
 
-// Connect narration button to play level audio
-narrationButton.addEventListener('click', () => {
-    playLevelNarration();
-});
+// We'll connect the narration button in the DOMContentLoaded event to ensure it's properly initialized
 
 /**
  * Toggles play/pause of the narration audio for the current level
+ * Exposed to the global scope for the inline onclick handler
  */
-function playLevelNarration() {
+window.playLevelNarration = function() {
+    console.log("Narration button clicked");
+    
     // If audio is already playing, pause it
     if (!narrationAudio.paused) {
         narrationAudio.pause();
@@ -765,27 +768,46 @@ function playLevelNarration() {
     }
     
     const currentLevel = gameState.currentLevel;
+    console.log(`Current level: ${currentLevel}`);
+    
     if (currentLevel < 1 || currentLevel > 13) {
         displayOutput("No narration available for this level.", 'feedback-hint');
         return;
     }
     
-    // Set the audio source to the appropriate level audio file (only if it's not already set)
-    const audioPath = `./audio/level${currentLevel}audio.mp3`;
-    if (narrationAudio.src !== window.location.origin + audioPath) {
-        narrationAudio.src = audioPath;
-    }
+    // Set the audio source to the appropriate level audio file
+    const audioPath = `/audio/level${currentLevel}audio.mp3`;
+    const fullPath = new URL(audioPath, window.location.href).href;
+    console.log(`Setting audio source to: ${fullPath}`);
     
-    // Play the audio
-    narrationAudio.play()
+    // Check if audio file exists by making a HEAD request
+    fetch(fullPath, { method: 'HEAD' })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`Audio file not found: ${response.status} ${response.statusText}`);
+            }
+            console.log(`Audio file exists: ${fullPath}`);
+            return true;
+        })
+        .then(() => {
+            // Set the audio source
+            narrationAudio.src = fullPath;
+            
+            // Add event listeners for debugging
+            narrationAudio.onloadeddata = () => console.log("Audio data loaded successfully");
+            narrationAudio.onerror = (e) => console.error("Audio loading error:", e);
+            
+            // Play the audio
+            return narrationAudio.play();
+        })
         .then(() => {
             console.log(`Playing narration for level ${currentLevel}`);
             displayOutput("Playing level narration...", 'feedback-hint');
             narrationButton.innerHTML = "⏸️ Pause"; // Change button text while playing
         })
         .catch(error => {
-            console.error(`Error playing narration: ${error}`);
-            displayOutput("Could not play narration audio.", 'feedback-bad');
+            console.error(`Error with narration: ${error}`);
+            displayOutput(`Audio issue: ${error.message}. Check console for details.`, 'feedback-bad');
         });
 }
 
