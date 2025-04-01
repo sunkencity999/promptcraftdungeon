@@ -150,12 +150,17 @@ body {
 }
 
 #status-bar {
-    padding: 8px 15px;
+    padding: 10px 15px;
     background-color: #111;
     border-top: 2px solid #00FF00;
     font-size: 0.8em;
     text-align: center;
     flex-shrink: 0; /* Prevent status bar from shrinking */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add space between all status bar items */
 }
 
 /* Small buttons in status bar */
@@ -163,17 +168,24 @@ body {
     background-color: #333;
     color: #00FF00;
     border: 1px solid #00FF00;
-    padding: 3px 8px;
+    padding: 4px 10px;
     font-family: 'Press Start 2P', monospace;
     cursor: pointer;
     font-size: 0.7em;
-    margin-left: 5px;
+    margin: 0 3px; /* Even spacing on both sides */
     transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap; /* Prevent button text from wrapping */
 }
 
 .small-button:hover {
     background-color: #00FF00;
     color: #000;
+}
+
+/* Add spacing for status bar text elements */
+#status-bar > span {
+    margin: 0 8px;
+    white-space: nowrap; /* Prevent text from wrapping */
 }
 
 /* Educational Content Modal */
