@@ -147,6 +147,13 @@ body {
     font-family: 'Press Start 2P', monospace;
     font-size: 0.9em;
     outline: none; /* Remove default focus border */
+    width: 100%; /* Ensure full width */
+}
+
+/* Style placeholder text */
+#prompt-input::placeholder {
+    white-space: normal; /* Allow wrapping */
+    overflow: visible; /* Ensure text is visible */
 }
 
 #status-bar {
@@ -185,7 +192,98 @@ body {
 /* Add spacing for status bar text elements */
 #status-bar > span {
     margin: 0 8px;
-    white-space: nowrap; /* Prevent text from wrapping */
+    white-space: nowrap; /* Prevent text from wrapping by default */
+}
+
+/* Allow location text to wrap on small screens */
+@media (max-width: 768px) {
+    #status-bar {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+    
+    #status-bar > span {
+        white-space: normal; /* Allow text to wrap on mobile */
+        margin: 3px 5px;
+    }
+    
+    /* Keep buttons from wrapping their text */
+    .small-button {
+        white-space: nowrap;
+        padding: 3px 8px;
+        font-size: 0.65em;
+    }
+}
+
+/* Additional optimizations for very small screens */
+@media (max-width: 480px) {
+    #status-bar {
+        padding: 6px 8px;
+        gap: 5px;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center;
+    }
+    
+    /* Group game stats together */
+    #status-bar .stats-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        margin-bottom: 5px;
+        width: 100%; /* Ensure full width */
+    }
+    
+    /* Group buttons together */
+    #status-bar .buttons-group {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+        width: 100%; /* Ensure full width */
+    }
+    
+    /* Ensure text wrapping on all spans */
+    #status-bar span,
+    #status-bar .stats-group span,
+    #status-bar .buttons-group span {
+        margin: 2px 3px;
+        font-size: 0.75em;
+        white-space: normal; /* Ensure text wrapping */
+        max-width: 100%; /* Prevent overflow */
+    }
+    
+    .small-button {
+        padding: 2px 6px;
+        font-size: 0.6em;
+        margin: 2px;
+    }
+    
+    /* Improve input area on very small screens */
+    #input-area {
+        flex-wrap: wrap;
+        padding: 8px 6px;
+    }
+    
+    #prompt-input {
+        font-size: 0.8em;
+        min-width: 0; /* Allow shrinking below content size */
+        width: calc(100% - 20px); /* Account for prompt indicator */
+    }
+    
+    #prompt-input::placeholder {
+        font-size: 0.9em;
+        opacity: 0.8;
+    }
+    
+    /* Adjust game container for very small screens */
+    #game-container {
+        padding: 8px;
+    }
+    
+    #game-output {
+        max-height: 50vh; /* Limit height on very small screens */
+    }
 }
 
 /* Educational Content Modal */
