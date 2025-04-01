@@ -337,6 +337,97 @@ function addXP(amount) {
 }
 
 /**
+ * Allows the player to skip the current challenge and move to the next one
+ * This is useful when a player is stuck and wants to continue learning
+ */
+function skipCurrentChallenge() {
+    // Get the current level and challenge information
+    const level = gameState.levels[gameState.currentLevel];
+    if (!level?.challenges || gameState.currentChallenge >= level.challenges.length) {
+        displayOutput("No challenge to skip.", 'feedback-hint');
+        return;
+    }
+    
+    const challenge = level.challenges[gameState.currentChallenge];
+    const isMultiStage = !!challenge.stages;
+    
+    // If it's a multi-stage challenge and not the last stage, advance to the next stage
+    if (isMultiStage && gameState.currentChallengeStage < challenge.stages.length - 1) {
+        gameState.currentChallengeStage++;
+        const nextStage = challenge.stages[gameState.currentChallengeStage];
+        
+        displayOutput("⏩ Skipping to the next stage of this challenge.", 'feedback-hint');
+        displayOutput(nextStage.description || "Continue with the next part of the challenge.", 'challenge-text');
+    } 
+    // Otherwise, advance to the next challenge
+    else {
+        // Move to the next challenge
+        gameState.currentChallenge++;
+        gameState.currentChallengeStage = 0; // Reset stage counter
+        
+        // Award a small amount of XP (less than solving it would give)
+        const skipXP = Math.floor((challenge.xpReward || 10) * 0.3); // 30% of normal XP
+        addXP(skipXP);
+        
+        displayOutput(`⏩ Challenge skipped. You received ${skipXP} XP (30% of normal reward).`, 'feedback-hint');
+        
+        // Check if we've completed all challenges in this level
+        if (gameState.currentChallenge >= level.challenges.length) {
+            // Move to the next level if available
+            if (level.nextLevel) {
+                displayOutput(level.completionMessage || "Level complete!", 'description');
+                displayOutput(`Moving to ${gameState.levels[level.nextLevel]?.name || 'next area'}...`, 'feedback-good');
+                
+                // Update game state for next level
+                const prevLevelIdx = gameState.currentLevel;
+                gameState.currentLevel = level.nextLevel;
+                gameState.currentChallenge = 0;
+                gameState.currentChallengeStage = 0;
+                gameState.hintUsedInChallenge = false;
+                gameState.lastFailedPrompt = null;
+                gameState.challengeContext = {};
+                
+                // Clean up move challenges if they exist
+                if (gameState.levels[prevLevelIdx]) {
+                    gameState.levels[prevLevelIdx].challenges = 
+                        gameState.levels[prevLevelIdx].challenges.filter(c => !c.id.endsWith('-move'));
+                }
+                
+                // Load the new level
+                loadLevel(gameState.currentLevel);
+            } else {
+                // No next level available
+                displayOutput("You've reached the end of available content!", 'feedback-good');
+            }
+        } else {
+            // Load the next challenge
+            const nextChallenge = level.challenges[gameState.currentChallenge];
+            let descriptionSource = nextChallenge.stages ? nextChallenge.stages[0] : nextChallenge;
+            displayOutput(descriptionSource.description || "Continue with the next challenge.", 'description');
+            
+            if (descriptionSource.promptTask) {
+                displayOutput(`Task: ${descriptionSource.promptTask}`, 'task-description');
+            }
+            
+            // Update educational content manager with new challenge context
+            if (window.educationalContent) {
+                window.educationalContent.updateContext(gameState.currentLevel, 
+                    nextChallenge.id || `${gameState.currentLevel}-${gameState.currentChallenge}`);
+            }
+            
+            // Update prompt visualizer with new challenge context
+            if (window.promptVisualizer) {
+                promptVisualizer.updateContext(gameState.currentLevel, 
+                    nextChallenge.id || `${gameState.currentLevel}-${gameState.currentChallenge}`);
+            }
+        }
+    }
+    
+    // Save the game state
+    saveGame();
+}
+
+/**
  * Evaluates the player's prompt against the current challenge conditions
  * @param {string} prompt - The player's input text
  * @returns {Object} Result object with success status and feedback
@@ -748,6 +839,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 promptHelpButton.addEventListener('click', () => {
     promptVisualizer.updateContext(gameState.currentLevel, `${gameState.currentLevel}-${gameState.currentChallenge}`);
     promptVisualizer.showModal();
+});
+
+// Connect skip button to skipCurrentChallenge function
+document.addEventListener('DOMContentLoaded', () => {
+    const skipButton = document.getElementById('skip-button');
+    if (skipButton) {
+        skipButton.addEventListener('click', skipCurrentChallenge);
+    } else {
+        console.error("Skip button not found in DOM");
+    }
 });
 
 // We'll connect the narration button in the DOMContentLoaded event to ensure it's properly initialized
