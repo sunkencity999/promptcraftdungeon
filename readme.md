@@ -107,3 +107,5 @@ To get the most out of PromptCraft Dungeon and truly master prompt engineering s
 ---
 
 Enjoy your journey into the PromptCraft Dungeon!
+Created by Christopher Bradford
+Questions? Feedback? Contact me at admin@promptcraftdungeon.com
