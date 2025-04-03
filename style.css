@@ -59,6 +59,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
+    margin: 0 auto; /* Center the game wrapper */
 }
 
 /* Level image container */
@@ -71,6 +72,7 @@ body {
     border: 3px solid #00FF00;
     background-color: #0a0a0a;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 #level-image {

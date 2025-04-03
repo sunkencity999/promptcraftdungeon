@@ -236,5 +236,12 @@
     <script src="educational_content.js" defer></script>
     <script src="prompt_visualizer.js" defer></script> <!-- Assuming this might also have dependencies -->
     <script src="script.js" defer></script> <!-- Main script depends on others -->
+    
+    <!-- Background canvas for particle effects -->
+    <canvas id="background-canvas" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;"></canvas>
+    
+    <!-- Visual enhancement scripts -->
+    <script src="visual_effects.js"></script>
+    <script src="enhancements.js"></script>
 </body>
 </html>
